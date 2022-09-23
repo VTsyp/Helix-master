@@ -1,0 +1,130 @@
+.mega {
+  cursor: auto;
+  z-index: 2000;
+  position: absolute;
+  top: calc(100% + 0px);
+  left: 0;
+  width: 100vw;
+  background-color: #18130C;
+  padding: rem(60px) 0;
+  display: flex;
+  transition: all 0.25s $easeOutQuart;
+  opacity: 0;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--secondary-color);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; 
+    height: 0; 
+    border-left: rem(10px) solid transparent;
+    border-right: rem(10px) solid transparent;
+    border-bottom: rem(10px) solid var(--secondary-color);
+  }
+
+  &__menu {
+    display: flex;
+    flex: 1 0 auto;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 4);
+  }
+
+  &__item {}
+
+  .mega__item + .mega__item {
+    margin-top: rem(30px);
+  }
+
+  &__title {
+    margin-bottom: rem(10px);
+    color: white;
+    text-transform: uppercase;
+    font-size: rem(16px);
+    font-weight: 600;
+    line-height: 40px;
+  }
+
+  &__list {
+
+    li {}
+
+    a {
+      display: block;
+      font-size: rem(13px);
+      text-transform: uppercase;
+      padding: rem(14px) 0;
+      line-height: 1;
+      color: #A8A7A5;
+      
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.mega-cta {
+  position: relative;
+  width: rem(270px);
+  flex: 0 1 auto;
+
+  &__img {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: rem(4px);
+    }
+  }
+
+  &__content {
+    padding: rem(90px) rem(30px);
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__subtitle {
+    font-size: rem(12px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: rem(22px);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__link {}
+}

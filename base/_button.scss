@@ -1,0 +1,204 @@
+button {
+  padding: unset;
+  margin: unset;
+  border: unset;
+  border-radius: unset;
+  background-color: unset;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  font-size: rem(14px);
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s $easeOutQuart;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: rem(5px);
+    bottom: rem(5px);
+    right: rem(5px);
+    left: rem(5px);
+  }
+}
+
+
+.button {
+  &.-md {
+    min-width: rem(220px);
+    padding: rem(20px) rem(32px);
+  }
+
+  &::after {
+    opacity: 0.4;
+    transition: all 0.2s $easeOutQuart;
+  }
+
+  &.-hovered {
+    &::after {
+      opacity: 1 !important;
+    }
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.button {
+  &.-white {
+    background-color: white !important;
+
+    &::after {
+      border: 1px solid #D7926B !important;
+    }
+    
+  }
+
+  &.-grey {
+    background-color: #615E5E !important;
+
+    &::after {
+      border: 1px solid white !important;
+    }
+
+    &:hover {
+      color: white !important;
+    }
+  }
+
+  &.-accent {
+    background-color: var(--accent-color) !important;
+
+    &::after {
+      border: 1px solid white !important;
+    }
+
+    &:hover {
+      color: white !important;
+    }
+  }
+
+  &.-secondary {
+    background-color: var(--secondary-color) !important;
+
+    &::after {
+      border: 1px solid white !important;
+    }
+  }
+
+  &.-dark {
+    background-color: #18130C !important;
+    
+    &::after {
+      border: 1px solid white !important;
+    }
+  }
+}
+
+
+.button.-simple {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s $easeOutQuart;
+
+  &::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    margin-right: rem(10px);
+
+    width: rem(44px);
+    height: rem(1px);
+    background-color: currentColor;
+
+    transition: all 0.3s $easeOutQuart;
+    transform-origin: left;
+  }
+
+  &:hover::before {
+    width: rem(64px);
+  }
+}
+
+.button.-icon {
+  .icon {
+    transition: transform 0.3s $easeOutQuart;
+  }
+
+  &:hover {
+    .icon {
+      transform: translateX(rem(6px));
+    }
+  }
+}
+
+
+
+.button-pulse {
+  position: relative;
+  z-index: unset !important;
+
+  &__btn {
+    cursor: pointer;
+    position: relative;
+    @include flexCenter;
+    @include size(rem(72px));
+    border: 0;
+    border-radius: 100%;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      @include size(100%);
+      border-radius: 100%;
+      background-color: #B88768;
+      animation: video_btn_pulse 2.4s infinite;
+      animation-timing-function: $easeOutCubic;
+    }
+  
+    &__inner {
+      @include flexCenter;
+      width: 100%;
+      height: 100%;
+    }
+  
+    i {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &.-light {
+    .button-pulse__btn {
+      &::after {
+        background-color: #FFF;
+      }
+    }
+  }
+}
+
+@keyframes video_btn_pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  75% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}

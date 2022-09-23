@@ -1,0 +1,41 @@
+.alert {
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(26px);
+    border-radius: rem(4px);
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__icon {}
+
+
+  &.-info {
+    .alert__content { background-color: #EEF6FD; }
+    .alert__icon .icon,
+    .alert__title { color: #4780AA; }
+  }
+
+  &.-warning {
+    .alert__content { background-color: #FBFAE3; }
+    .alert__icon .icon,
+    .alert__title { color: #927238; }
+  }
+
+  &.-error {
+    .alert__content { background-color: #FBECEB; }
+    .alert__icon .icon,
+    .alert__title { color: #AB3331; }
+  }
+
+  &.-success {
+    .alert__content { background-color: #EFF7E5; }
+    .alert__icon .icon,
+    .alert__title { color: #5B7052; }
+  }
+}

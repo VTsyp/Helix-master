@@ -1,0 +1,175 @@
+.service {
+  &__content {
+    position: relative;
+    padding: 32px 60px 40px 40px;
+    
+    &.-border {
+      border: 1px solid #E4E4E4;
+    }
+
+    @include media-below(lg) {
+      padding: 36px 30px;
+    }
+  }
+
+  &__icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(#D7926B, 0.1);
+
+    .icon {
+      font-size: 24px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  &__text {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__button {
+    margin-top: 24px;
+
+    .button::before {
+      width: 20px;
+    }
+  }
+}
+
+.service.-card .service {
+  &__content {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #D7926B;
+    }
+  }
+}
+
+.service.-card.-hover {
+  .service {
+    &__content {
+      transition: all 0.2s $easeOutQuart;
+    }
+    
+    &__icon {
+      transition: all 0.2s $easeOutQuart;
+  
+      .icon {
+        transition: all 0.2s $easeOutQuart;
+      }
+    }
+  
+    &__title {
+      transition: color 0.2s $easeOutQuart;
+    }
+  
+    &__text {
+      transition: color 0.2s $easeOutQuart;
+    }
+  
+    &__button {
+      transition: color 0.2s $easeOutQuart;
+    }
+  }
+
+
+  &:hover .service {
+    &__content {
+      background-color: #18130C !important;
+    }
+    
+    &__icon {
+      background-color: #D7926B !important;
+  
+      .icon {
+        color: white !important;
+      }
+    }
+  
+    &__title {
+      color: white !important;
+    }
+  
+    &__text {
+      color: white !important;
+    }
+  
+    &__button a {
+      color: white !important;
+    }
+  }
+}
+
+.service.-image.-hover {
+  .service__image {
+    overflow: hidden;
+
+    div {
+      transition: all 0.6s $easeOutQuart;
+    }
+  }
+
+  .service__content {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #D7926B;
+      opacity: 0;
+      transition: all 0.3s $easeOutQuart;
+    }
+  }
+  
+  &:hover .service {
+    &__image {
+      div {
+        transform: scale(1.1);
+      }
+    }
+
+    &__content::after {
+      opacity: 1;
+    }
+  }
+}
+
+.service.-icon-hover {
+  .service {
+    &__icon {
+      transition: all 0.2s $easeOutQuart;
+  
+      .icon {
+        transition: all 0.2s $easeOutQuart;
+      }
+    }
+  }
+
+  &:hover .service {
+    &__icon {
+      background-color: #D7926B !important;
+  
+      .icon {
+        color: white !important;
+      }
+    }
+  }
+}

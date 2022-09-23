@@ -1,0 +1,349 @@
+.masthead {
+  .swiper-wrapper {
+    z-index: -1;
+  }
+
+  .container,
+  .row {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    overflow: hidden;
+  }
+}
+
+.masthead {
+  background-color: rgb(19, 19, 19);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(black, 0.4);
+    }
+  }
+
+  &__title {
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 82px;
+    
+    span {
+      font-weight: 600;
+    }
+
+    @include media-below(md) {
+      font-size: 40px;
+      line-height: 47px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    opacity: 0;
+    
+    @include media-below(md) {
+      margin-top: 20px;
+    }
+  }
+
+
+  &__pagination_numbers {
+    z-index: 5;
+    position: absolute;
+    top: 330px;
+    left: 60px;
+    display: flex;
+    
+    span {
+      color: white;
+    }
+
+    span:nth-child(1) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    span:nth-child(2) {
+      // font-family: Jost;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 0 7px;
+    }
+
+    span:nth-child(3) {
+      font-size: 40px;
+      line-height: 47px;
+    }
+  }
+
+  &__socials {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    display: flex;
+
+    &_item {}
+
+    a + a {
+      margin-top: 30px;
+    }
+  }
+
+  &__pagination {}
+
+  &__scroll {
+    cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
+
+    &_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 100%;
+      color: white;
+      font-size: 14px;
+      line-height: 16px;
+  
+      // &:hover {
+      //   border: 1px solid #D7926B;
+      //   .icon { color: #D7926B; }
+      // }
+    }
+
+    &_icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 100%;
+      border: 1px solid #fff;
+      transition: all 0.1s ease-out;
+      color: white;
+      margin-top: 25px;
+      overflow: hidden;
+      
+      .icon {
+        animation-duration: 1.8s;
+        animation-name: uiScrollInfinite;
+        animation-timing-function: $easeInOutQuart;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+
+        color: white;
+        position: relative;
+        font-size: 30px;
+        transition: all 0.1s ease-out;
+      }
+    }
+  }
+}
+
+@keyframes uiScrollInfinite {
+  0%   { transform: translateY(-100%) rotate(90deg); }
+  100% { transform: translateY(100%) rotate(90deg); }
+}
+
+
+
+.masthead-pagination {
+  z-index: 10;
+  position: absolute;
+  bottom: rem(50px);
+  left: rem(60px);
+  display: flex;
+
+  @include media-below(md) {
+    bottom: rem(30px);
+    left: rem(30px);
+  }
+
+  &__item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.5;
+    transition: opacity 0.4s $easeInOutQuart 0.2s;
+
+    .masthead-pagination__line {
+      transition: transform 0.4s $easeInOutQuart 0.2s;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &.is-active {
+      opacity: 1;
+
+      .masthead-pagination__line {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .masthead-pagination__item + .masthead-pagination__item {
+    margin-left: 75px;
+    
+    @include media-below(md) {
+      margin-left: 40px;
+    }
+  }
+
+  &__number {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: white;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 12px;
+    color: white;
+  }
+
+  &__line {
+    margin-top: 8px;
+    transform-origin: left;
+    width: 104px;
+    height: 1px;
+    background-color: white;
+
+    @include media-below(md) {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+.page-masthead {
+  position: relative;
+  padding-top: rem(435px);
+  padding-bottom: rem(160px);
+
+  @include media-below(lg) {
+    padding-top: rem(380px);
+    padding-bottom: rem(150px);
+  }
+
+  @include media-below(md) {
+    padding-top: rem(240px);
+    padding-bottom: rem(140px);
+  }
+
+  @include media-below(sm) {
+    padding-top: rem(200px);
+    padding-bottom: rem(120px);
+  }
+
+  &__bg {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(black, 0.6);
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    position: relative;
+
+    @include media-below(md) {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(14px);
+    font-weight: 600;
+    line-height: rem(16px);
+    text-transform: uppercase;
+    color: var(--accent-color);
+    padding-left: rem(4px);
+    margin-bottom: rem(6px);
+  }
+
+  &__back_title {
+    white-space: nowrap;
+    position: absolute;
+    bottom: rem(-40px);
+    left: rem(-48px);
+    font-size: rem(120px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(white, 0.2);
+
+    @include media-below(lg) {
+      font-size: rem(100px);
+    }
+
+    @include media-below(md) {
+      font-size: rem(80px);
+      top: 65%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    @include media-below(sm) {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-size: rem(70px);
+    font-weight: 400;
+    line-height: 1.1;
+
+    @include media-below(sm) {
+      font-size: rem(58px);
+    }
+  }
+}
+
+.page-masthead-bread {
+  font-size: rem(14px);
+  line-height: rem(16px);
+
+  &__item {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

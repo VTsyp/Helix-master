@@ -1,0 +1,152 @@
+.team {
+  cursor: pointer;
+  position: relative;
+
+  &__image {
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(black, 0.6);
+    padding: 36px 30px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__socials {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      font-size: 16px;
+    }
+
+    a + a {
+      margin-top: 10px;
+    }
+
+    @include media-below(md) {
+      top: unset;
+      transform: none;
+      bottom: 20px;
+      left: 20px;
+
+      a {
+        font-size: 14px;
+      }
+  
+      a + a {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__info {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #D7926B;
+
+    @include media-below(md) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__title {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+
+    @include media-below(md) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+.team.-hover {
+  .team {
+    &__image {
+      overflow: hidden;
+  
+      .bg-image {
+        transition: all 0.5s $easeOutQuart;
+      }
+    }
+  
+    &__content {
+      transition: all 0.5s $easeOutQuart;
+      opacity: 0;
+    }
+  
+    &__socials {
+      transition: all 0.5s $easeOutQuart;
+    }
+  
+    &__info {
+      transition: all 0.5s $easeOutQuart;
+      transform: translateY(16px);
+    }
+  
+    &__title {
+      transition: all 0.5s $easeOutQuart 0.08s;
+      transform: translateY(16px);
+    }
+  }
+
+  &:hover {
+    .team__image .bg-image {
+      transform: scale(1.1);
+    }
+
+    .team__content {
+      opacity: 1;
+    }
+
+    .team__info {
+      transform: none;
+    }
+  
+    .team__title {
+      transform: none;
+    }
+  }
+}
+
+.team.-zoom-hover {
+  .team {
+    &__image {
+      overflow: hidden;
+  
+      .bg-image {
+        transition: all 0.5s $easeOutQuart;
+      }
+    }
+  
+    &__content {
+      transition: all 0.5s $easeOutQuart;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .team__image .bg-image {
+      transform: scale(1.1);
+    }
+
+    .team__content {
+      opacity: 1;
+    }
+  }
+}

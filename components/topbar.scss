@@ -1,0 +1,43 @@
+.topbar {
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: rem(40px);
+  display: flex;
+  align-items: center;
+
+  &__info {
+    display: flex;
+  }
+
+  &__item {}
+
+  .topbar__item + .topbar__item {
+    margin-left: rem(30px);
+  }
+
+  &__icon {}
+
+  &__text {}
+
+  &__socials_content {
+    display: flex;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: rem(24px);
+      height: rem(24px);
+      border-radius: 100%;
+      border: 1px solid transparent;
+      transition: all 0.2s $easeOutQuart;
+    }
+
+    a + a {
+      margin-left: rem(5px);
+    }
+  }
+}
