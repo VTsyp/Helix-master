@@ -1,0 +1,102 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/13.jpg',
+    title: 'Shop List',
+    subtitle: 'PRODUCTS'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-between">
+            <div class="text-sm text-grey">Showing 1–9 of 25 results</div>
+            <div class="text-sm text-grey">Sort by latest</div>
+          </div>
+          
+          <div class="row y-gap-32 mt-40 lg:mt-20">
+            {% for item in range(0,12) %}
+              <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="shopCard text-center">
+                  <div class="shopCard__image ratio ratio-29:33">
+                    <img class="ratio-img" src="img/shop/products/{{ loop.index }}.jpg" alt="Product image">
+
+                    <a data-barba href="#" class="shopCard__button">
+                      <i class="icon" data-feather="shopping-bag"></i>
+                      Add to cart
+                    </a>
+                  </div>
+
+                  <div class="shopCard__content mt-20">
+                    <div class="shopCard__category text-accent">
+                      <a data-barba href="#" class="">House</a>,
+                      <a data-barba href="#" class="">Interior</a>
+                    </div>
+              
+                    <h4 class="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                    <div class="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="row justify-content-center mt-48">
+            <div class="col-auto">
+              <div class="pagination -section">
+                <div class="pagination__nav">
+                  <a data-barba href="#" class="nav-icon -left">
+                    <div class="nav-icon__circle">
+                      <i class="icon icon-left-arrow"></i>
+                    </div>
+                  </a>
+                </div>
+                
+                <div class="pagination__content">
+                  <a data-barba href="#">1</a>
+                  <a data-barba href="#">2</a>
+                  <a data-barba href="#" class="is-active">3</a>
+                  <a data-barba href="#">4</a>
+                  <span>...</span>
+                  <a data-barba href="#">16</a>
+                </div>
+
+                <div class="pagination__nav">
+                  <a data-barba href="#" class="nav-icon -right">
+                    <div class="nav-icon__circle">
+                      <i class="icon icon-right-arrow"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

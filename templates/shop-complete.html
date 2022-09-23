@@ -1,0 +1,121 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/13.jpg',
+    title: 'Shop Complete',
+    subtitle: 'PRODUCTS'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row no-gutters justify-content-center">
+        <div class="col-xl-7">
+          <div class="shopCompleted-header">
+            <div class="icon">
+              <i data-feather="check"></i>
+            </div>
+            <h2 class="title">
+              Your order is completed!
+            </h2>
+            <div class="subtitle">
+              Thank you. Your order has been received.
+            </div>
+          </div>
+
+          <div class="shopCompleted-info">
+            <div class="row no-gutters y-gap-32">
+              <div class="col-md-3 col-sm-6">
+                <div class="shopCompleted-info__item">
+                  <div class="subtitle text-grey">Order Number</div>
+                  <div class="title text-black">13119</div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="shopCompleted-info__item">
+                  <div class="subtitle text-grey">Date</div>
+                  <div class="title text-black">27/07/2021</div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="shopCompleted-info__item">
+                  <div class="subtitle text-grey">Total</div>
+                  <div class="title text-black">$40.10</div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <div class="shopCompleted-info__item">
+                  <div class="subtitle text-grey">Payment Method</div>
+                  <div class="title text-black">Direct Bank Transfer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shopCompleted-footer">
+            <div class="shopCompleted-footer__wrap">
+              <h5 class="title">
+                YOUR ORDER
+              </h5>
+
+              <div class="item">
+                <span class="fw-600 text-black">Product</span>
+                <span class="fw-600 text-black">Subtotal</span>
+              </div>
+
+              <div class="item">
+                <span class="text-grey">Hoodie x2</span>
+                <span class="text-grey">$59.00</span>
+              </div>
+
+              <div class="item -border-none">
+                <span class="text-grey">Seo Books x 1</span>
+                <span class="text-grey">$67.00</span>
+              </div>
+
+              <div class="item -border-none">
+                <span class="fw-600 text-black">Subtotal</span>
+                <span class="fw-600 text-black">$178.00</span>
+              </div>
+
+              <div class="item">
+                <span class="fw-600 text-black">Shipping</span>
+                <span class="fw-600 text-black">$178.00</span>
+              </div>
+
+              <div class="item">
+                <span class="fw-600 text-black">Total</span>
+                <span class="fw-600 text-black">$9,218.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

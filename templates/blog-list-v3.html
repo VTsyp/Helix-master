@@ -1,0 +1,93 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/12.jpg',
+    title: 'Blog List',
+    subtitle: 'News'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="section-filter px-16">
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <div class="filter-button-group text-dark fw-500 mt-32">
+              <button class="button mr-20 btn-active" data-filter="*">All</button>
+              <button class="button mr-20" data-filter=".modeling">3d Modeling</button>
+              <button class="button mr-20" data-filter=".architecture">Architecture</button>
+              <button class="button mr-20" data-filter=".buildings">Buildings</button>
+              <button class="button mr-20" data-filter=".living_room">Living Room</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="masonry -gap-32 -col-3 layout-pt-sm js-masonry js-masonry-no-filter">
+          <div class="masonry__sizer"></div>
+          
+          {% for item in range(0,9) -%}
+            <div class="masonry__item -no-ratio {{ item.filter }}">
+              <div data-anim-wrap class="blog -hover">
+                <a data-barba href="#">
+                  <div class="blog__image">
+                    <div data-anim-child="img-right cover-black">
+                      <div>
+                        <div class="ratio ratio-41:35">
+                          <img class="ratio-img" src="img/blog/page/{{ loop.index }}.jpg" alt="blog image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="blog__category">Interior</div>
+                  </div>
+                </a>
+  
+                <div class="blog__content mt-20">
+                  <div data-anim-child="slide-up delay-6" class="blog__info">
+                    <a data-barba href="#">APRIL 06, 2021</a>
+                    <a data-barba href="#">Floyd Miles</a>
+                  </div>
+  
+                  <div data-anim-child="slide-up delay-7">
+                    <h3 class="blog__title text-black pr-80 lg:pr-0">Nordic style, interior style for simple life</h3>
+                  </div>
+  
+                  <div data-anim-child="slide-up delay-8">
+                    <a data-barba href="#" class="blog__button button -simple text-black">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor -%}
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-40">
+        <div class="col-auto">
+          <button class="button -md -dark text-white">Load more</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+<div class="topbar bg-beige-dark md:d-none">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-auto">
+        <div class="topbar__info">
+          {% for item in [
+            { icon: 'icon-rocket', title: '+(123) 1234-567-8901' },
+            { icon: 'icon-rocket', title: 'hello@hellix.com' },
+            { icon: 'icon-rocket', title: 'Mon - Sat 8:00 - 17:30, Sunday - CLOSED' }
+          ] %}
+            <div class="topbar__item">
+              <i class="topbar__icon text-white {{ item.icon }}"></i>
+              <a data-barba href="#" class="topbar__text text-white">{{ item.title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <div class="topbar__socials">
+          <div class="topbar__socials_content">
+            <a data-barba href="#" class="text-white">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a data-barba href="#" class="text-white">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a data-barba href="#" class="text-white">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a data-barba href="#" class="text-white">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,332 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/6.jpg',
+    title: 'About Us',
+    subtitle: 'explore the features'
+  }) }}
+
+
+  <!-- about -->
+  <section class="layout-pt-lg overflow-visible z-2">
+    <div class="container">
+      <div data-anim-wrap class="row align-items-center">
+        <div class="col-xl-5 col-lg-6 col-md-10">
+          <div class="aboutBack sm:d-none">
+            <img src="img/general/large-logo.svg" alt="logo">
+          </div>
+
+          <div data-anim-child="slide-right delay-8" class="sectionHeading -left-line -about pr-12 lg:pr-0">
+            <span class="sectionHeading__subtitle">OUR STORY</span>
+            <h2 class="sectionHeading__title">Welcome To Hellix Architecture & Interior</h2>
+            <p class="sectionHeading__text">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of.</p>
+            
+            <div class="sectionHeading__button">
+              <a data-barba href="#" class="button -md -dark text-white">DISCOVER MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-7 col-lg-6">
+          <div class="overlayImgs md:mt-60">
+            <div data-anim-child="img-right cover-black" class="overlayImgs__back">
+              <img src="img/backgrounds/7.jpg" alt="Image">
+            </div>
+
+            <div data-anim-child="img-right cover-black delay-3" class="overlayImgs__front -border">
+              <img src="img/backgrounds/2.jpg" alt="Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- counter -->
+  <section class="layout-pt-md layout-pb-md bg-grey counter__section">
+    <div class="container">
+      <div class="row justify-content-between md:pt-48">
+        {% for item in [
+          { number: 532, title: 'happy<br>Clients' },
+          { number: 48, title: 'Years of<br>Experience' },
+          { number: 76, title: 'Awards<br>Winning' },
+          { number: 19, title: 'Office<br>Worldwide' }
+        ] %}
+          <div class="col-lg-auto col-md-6">
+            <div class="counter">
+              <div class="counter__back">
+                {{ item.number }}
+              </div>
+
+              <div class="counter__content">
+                <div class="counter__number text-black">{{ item.number | safe }}</div>
+                <h5 class="counter__title text-black">{{ item.title | safe }}</h5>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="relative layout-pt-lg layout-pb-lg">
+    <div class="section-bg-image col-lg-6 px-0">
+      <div class="bg-image js-lazy" data-bg="img/backgrounds/11.jpg"></div>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-4 col-lg-5 offset-lg-7">
+          <div class="sectionHeading -left-line">
+            <span class="sectionHeading__subtitle">EXPLORE THE FEATURES</span>
+            <h2 class="sectionHeading__title mt-16">Full project<br>management</h2>
+            <p class="sectionHeading__text mt-24">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- circle counter -->
+  <section class="layout-pt-lg layout-pb-lg bg-dark-img pattern_bg_2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <div class="sectionHeading -top-line text-center">
+            <span class="sectionHeading__subtitle">OUR SKILLS</span>
+            <h2 class="sectionHeading__title text-white">The Core Company Values</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center justify-content-md-between y-gap-48 layout-pt-sm">
+        {% for item in [
+          { num: '95', title: 'Illustration' },
+          { num: '50', title: 'Interior Design' },
+          { num: '100', title: 'Architecture' },
+          { num: '75', title: '3D Modeling' }
+        ] %}
+          <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-5">
+            <div class="pieChart text-center" data-percent="{{ item.num }}" data-anim="pie-chart">
+              <div class="pieChart__chart">
+                <svg viewBox="0 0 75 75">
+                  <circle cx="50%" cy="50%" r="35" class="pieChart__back"></circle>
+                  <circle cx="50%" cy="50%" r="35" class="pieChart__bar bar-stroke-hidden js-chart-bar"></circle>
+                </svg>
+                <div class="pieChart__percent text-white js-chart-percent">0%</div>
+              </div>
+  
+              <div class="pieChart__content">
+                <h4 class="pieChart__title text-white">
+                  {{ item.title }}
+                </h4>
+                <p class="pieChart__text text-white">
+                  Lorem ipsum dolor amet sociis dolor.
+                </p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- services -->
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="sectionHeading -top-line text-center">
+            <span class="sectionHeading__subtitle">WHAT CAN WE OFFER</span>
+            <h2 class="sectionHeading__title">Our Services</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row y-gap-32 layout-pt-sm">
+        {% for item in [
+          { icon: 'icon-pencil', title: 'Architecture & Interior' },
+          { icon: 'icon-rocket', title: 'Project Planning' },
+          { icon: 'icon-cube', title: 'Product Design' },
+          { icon: 'icon-idea', title: 'Custom Solutions' }
+        ] %}
+          <div class="col-lg-3 col-md-6">
+            <div data-anim="slide-up" class="service -card -hover">
+              <div class="service__content -border">
+                <div class="service__icon">
+                  <i class="icon {{ item.icon }} text-beige"></i>
+                </div>
+
+                <h3 class="service__title mt-20">{{ item.title }}</h3>
+                <p class="service__text">Aenean commodo nec ligula eget cum sociis dolor.</p>
+
+                <div class="service__button">
+                  <a data-barba href="#" class="button -simple text-black">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md bg-grey">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="sectionHeading -top-line text-center">
+            <span class="sectionHeading__subtitle">STEPS</span>
+            <h2 class="sectionHeading__title">Working Process</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row x-gap-120 y-gap-32 justify-content-center layout-pt-sm">
+        {% for item in [
+          { icon: 'icon-pencil', title: 'Planning Stage' },
+          { icon: 'icon-rocket', title: 'Design Process' },
+          { icon: 'icon-cube', title: 'Execution Phase' },
+          { icon: 'icon-idea', title: 'Completed Projects' }
+        ] %}
+          <div class="col-lg-3 col-md-6 col-10">
+            <div data-anim="slide-up delay-{{ loop.index }}" class="background-num -hover text-center">
+              <div class="background-num__wrap">
+                <div class="background-num__num">0{{ loop.index }}</div>
+              </div>
+
+              <div class="d-flex justify-content-center background-num__front">
+                <div class="size-3xl bg-grey rounded-full shadow-light d-flex justify-content-center align-items-center">
+                  <i class="icon {{ item.icon }} text-black text-3xl"></i>
+                </div>
+              </div>
+
+              <h3 class="text-lg mt-24">{{ item.title }}</h3>
+              <p class="text-sm text-dark mt-12">Aenean commodo nec ligula eget cum sociis dolor.</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- team -->
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row justify-content-center md:justify-content-start">
+        <div class="col-auto">
+          <div class="sectionHeading -top-line -md text-center md:text-left">
+            <span class="sectionHeading__subtitle">PROFESSIONALS</span>
+            <h2 class="sectionHeading__title">Our Team</h2>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row layout-pt-sm">
+        <div
+          class="sectionSlider overflow-hidden sm:px-16 js-sectionSlider"
+          data-gap="30"
+          data-slider-col="base-4 lg-3 md-2 sm-2"
+          data-pagination
+        >
+
+          <div class="swiper-wrapper">
+            {% for item in [1,2,3,4,1,2,3,4] %}
+              <div class="swiper-slide">
+                <div class="team -hover">
+                  <div data-anim="img-right cover-black" class="team__image">
+                    <div>
+                      <div class="ratio ratio-3:4 bg-image js-lazy" data-bg="img/team/{{ item }}.png"></div>
+                    </div>
+                  </div>
+    
+                  <div class="team__content">
+                    <div class="team__socials">
+                      <a data-barba href="#" class="text-white">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                      </a>
+                      <a data-barba href="#" class="text-white">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      </a>
+                      <a data-barba href="#" class="text-white">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                      </a>
+                      <a data-barba href="#" class="text-white">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                      </a>
+                    </div>
+    
+                    <div class="md:d-none">
+                      <div class="team__info">INTERIOR DESIGNER</div>
+                      <h3 class="team__title text-white">Jenny Wilson</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="nav -slider lg:d-none">
+            <div class="nav__item -left js-prev">
+              <i class="icon icon-left-arrow"></i>
+            </div>
+
+            <div class="nav__item -right js-next">
+              <i class="icon icon-right-arrow"></i>
+            </div>
+          </div>
+
+          <div class="pagination -slider mt-48 js-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- clients -->
+  <section class="layout-pt-sm layout-pb-md">
+    <div class="container">
+      <div class="row y-gap-32 justify-content-between align-items-center">
+        {% for item in range(0,6) %}
+          <div class="col-lg-auto col-md-auto col-6">
+            <div class="clients">
+              <div class="clients__image">
+                <img src="img/clients/{{ loop.index }}.png" alt="clients image">
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

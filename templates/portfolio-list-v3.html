@@ -1,0 +1,69 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/12.jpg',
+    title: 'Portfolio List',
+    subtitle: 'OUR WORKS'
+  }) }}
+
+
+  <section class="layout-pt-lg layout-pb-lg">
+    <div class="container">
+      <div class="row fancy-grid">
+        {% for item in [
+          { title: 'BURGS HOUSING', border: '-left' },
+          { title: 'LONDON FLAT', border: '-right' },
+          { title: 'HELSINKI RESIDENCE', border: '-left' },
+          { title: 'PARIS STUDIO', border: '-right' },
+          { title: 'NEW YORK HOTEL', border: '-left' },
+          { title: 'GREEN RESIDENCE', border: '-right' }
+        ] %}
+          <div data-anim-wrap class="grid__item">
+            <div class="grid__wrap background-border {{ item.border }}">
+              <div data-anim-child="img-right cover-black delay-1" class="grid__image">
+                <img src="img/portfolio/fancy/{{ loop.index }}.jpg" alt="Portfolio image">
+              </div>
+
+              <div class="grid__category">
+                Architecture
+              </div>
+
+              <div data-anim-child="slide-up delay-4" class="grid__content ml-64 md:ml-0 md:mt-20">
+                <h3 class="grid__title text-black">{{ item.title }}</h3>
+                <a data-barba href="#" class="grid__button button -simple text-black mt-16">VIEW MORE</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="col-12">
+          <div class="fancy-grid__button">
+            <a data-barba href="#" class="button -md -dark text-white">MORE PROJECT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

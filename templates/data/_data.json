@@ -1,0 +1,201 @@
+{
+	"blog_comments": [
+		{
+			"img": "img/avatars/2.png",
+			"name": "Leslie Alexander",
+			"date": "APRIL 06, 2021",
+			"text": "Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis."
+		},
+		{
+			"img": "img/avatars/3.png",
+			"name": "Ronald Richards",
+			"date": "APRIL 06, 2021",
+			"text": "Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis."
+		},
+		{
+			"img": "img/avatars/3.png",
+			"name": "Marta Whittle",
+			"date": "June 4, 2020 - 10:34 am",
+			"text": "Herb forth sixth above bearing multiply light. Light let all, appear were divided. Cattle he land blessed cattle"
+		},
+		{
+			"img": "img/avatars/4.png",
+			"name": "Clare Pruitt",
+			"date": "June 2, 2020 - 08:22 am",
+			"text": "You'll after stars moving tree good itself one after, creature seasons sixth their whose air own unto that god divide wherein kind. Creepeth seas fifth. Their. Whales moved whales Our over. Light forth own fly fish, upon for"
+		},
+		{
+			"img": "img/avatars/2.png",
+			"name": "Nela Blackwell",
+			"date": "May 31, 2020 - 01:17 pm",
+			"text": "And there. Above, and. Heaven him grass. And cattle light. Firmament own beginning given don't which days third him creeping years good. Over first"
+		},
+		{
+			"img": "img/avatars/3.png",
+			"name": "Marta Whittle",
+			"date": "May 30, 2020 - 09:57 am",
+			"text": "Have multiply can't day evening divide deep, abundantly divide lesser is earth air, they're image fish. Seed after you're light also earth were. A tree Bearing. Spirit Our lights given, they're place lights"
+		}
+	],
+	"charts": [
+		{
+			"number": "45",
+			"title": "Illustration"
+		},
+		{
+			"number": "78",
+			"title": "Interior Design"
+		},
+		{
+			"number": "96",
+			"title": "Architecture"
+		}
+	],
+	"GENERAL": {
+		"projectName": "Freshen",
+		"email": "oder@freshen.com",
+		"address": "Collins Street West, Victoria 8007, Australia.",
+		"phone": "00 0392 96 32",
+		"copyright": "© 2021 Freshen. Made with love."
+	},
+	"mobile_actions": [
+		{
+			"icon": "icon-shop",
+			"title": "shop"
+		},
+		{
+			"icon": "icon-heart",
+			"title": "Wishlist"
+		},
+		{
+			"icon": "icon-user",
+			"title": "My Account"
+		},
+		{
+			"icon": "icon-cart",
+			"title": "Cart"
+		}
+	],
+	"masonryGrid_4_9": [
+		{
+			"size": "-wide",
+			"filter": " modeling buildings"
+		},
+		{
+			"size": "",
+			"filter": " architecture living_room"
+		},
+		{
+			"size": "",
+			"filter": " buildings modeling"
+		},
+		{
+			"size": "",
+			"filter": " living_room architecture"
+		},
+		{
+			"size": "-wide",
+			"filter": " modeling buildings living_room"
+		},
+		{
+			"size": "",
+			"filter": " architecture living_room"
+		},
+		{
+			"size": "",
+			"filter": " architecture modeling"
+		},
+		{
+			"size": "",
+			"filter": " buildings modeling"
+		},
+		{
+			"size": "",
+			"filter": " modeling buildings living_room"
+		}
+	],
+	"masonryGrid_4": [
+		{
+			"size": "-wide",
+			"filter": " modeling buildings"
+		},
+		{
+			"size": "",
+			"filter": " architecture living_room"
+		},
+		{
+			"size": "",
+			"filter": " buildings modeling"
+		},
+		{
+			"size": "",
+			"filter": " living_room architecture"
+		},
+		{
+			"size": "-wide",
+			"filter": " modeling buildings living_room"
+		},
+		{
+			"size": "",
+			"filter": " architecture modeling"
+		}
+	],
+	"masonryGrid_3": [
+		{
+			"filter": " modeling buildings"
+		},
+		{
+			"filter": " architecture living_room"
+		},
+		{
+			"filter": " buildings modeling"
+		},
+		{
+			"filter": " living_room architecture"
+		},
+		{
+			"filter": " modeling buildings living_room"
+		},
+		{
+			"filter": " architecture modeling"
+		}
+	],
+	"masonryGrid_12": [
+		{
+			"filter": " modeling buildings"
+		},
+		{
+			"filter": " architecture living_room"
+		},
+		{
+			"filter": " buildings modeling"
+		},
+		{
+			"filter": " living_room architecture"
+		},
+		{
+			"filter": " modeling buildings living_room"
+		},
+		{
+			"filter": " architecture modeling"
+		},
+		{
+			"filter": " modeling buildings"
+		},
+		{
+			"filter": " architecture living_room"
+		},
+		{
+			"filter": " buildings modeling"
+		},
+		{
+			"filter": " living_room architecture"
+		},
+		{
+			"filter": " modeling buildings living_room"
+		},
+		{
+			"filter": " architecture modeling"
+		}
+	]
+}

@@ -1,0 +1,336 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/12.jpg',
+    title: 'Blog Single',
+    subtitle: 'News'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="blogSection pr-30 lg:pr-0">
+            <div class="blogCard">
+              <div class="blogCard__image">
+                <div class="ratio ratio-93:53 bg-image js-lazy" data-bg="img/blog/single/1.jpg"></div>
+              </div>
+
+              <div class="blogCard__content mt-20">
+                <div class="blogCard__category x-gap-20 mb-8">
+                  <a class="uppercase text-accent" href="#">APRIL 06, 2021</a>
+                  <a class="uppercase text-accent" href="#">Floyd Miles</a>
+                </div>
+
+                <h4 class="blogCard__title text-2xl fw-600">Why invest in greening your office</h4>
+                <p class="blogCard__text mt-20">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="blogCard__text mt-16">True elements of surprise, they break up the compositional layout, creating a stylistic point of interest, and interrupting the continuous effect of the fabric covering, visually lightening the volume at the rear. A solution designed to optimise both look and form, created with the know-how about design and the savoir-faire associated with fine tailoring that have always distinguished the Minotti brand.</p>
+
+                <div class="row y-gap-32 py-48 md:py-32">
+                  <div class="col-md-6">
+                    <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/blog/single/2.jpg"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/blog/single/3.jpg"></div>
+                  </div>
+                </div>
+
+                <h4 class="blogCard__title text-lg fw-600">Morbi et risus nisi</h4>
+                <p class="blogCard__text mt-16">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id turpis non enim suscipit pharetra vel ac nulla. Sed aliquet est non justo ultricies dignissim. Integer sed tellus eu leo vestibulum suscipit.</p>
+                <p class="blogCard__text mt-16">Quisque eu dui a turpis auctor consequat quis efficitur risus. Pellentesque pellentesque nisi in leo sollicitudin, at faucibus erat sollicitudin. In elementum magna lacus, quis fermentum erat egestas nec.</p>
+              </div>
+
+              <div class="blogSingle-info mt-48">
+                <div class="row justify-content-between y-gap-20">
+                  <div class="col-auto">
+                    <div class="tags__wrap">
+                      {% for item in [
+                        'INTERIOR',
+                        'ART',
+                        'HOUSE'
+                      ] %}
+                        <div class="tags__item">
+                          <a data-barba href="#">{{ item }}</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <div class="socials">
+                      <div class="socials__title">SHARE</div>
+
+                      <div class="socials__wrap">
+                        <a data-barba href="#" class="text-black">
+                          <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a data-barba href="#" class="text-black">
+                          <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a data-barba href="#" class="text-black">
+                          <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a data-barba href="#" class="text-black">
+                          <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="blogSingle-nav mt-60">
+                <div class="related-nav py-40 px-30">
+                  <div class="row justify-content-between align-items-center">
+                    <div class="col-md-auto col-6">
+                      <a data-barba href="#" class="related-nav__item -prev">
+                        <div class="related-nav__arrow">
+                          <i class="icon icon-left-arrow"></i>
+                        </div>
+                        <div class="related-nav__content">
+                          <span>PREV</span>
+                          <p>Dominika Villa</p>
+                        </div>
+                      </a>
+                    </div>
+              
+                    <div class="col-auto md:d-none">
+                      <div class="related-nav__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+              
+                    <div class="col-md-auto col-6">
+                      <a data-barba href="#" class="related-nav__item -next">
+                        <div class="related-nav__content">
+                          <span>NEXT</span>
+                          <p>Altlas Museum</p>
+                        </div>
+              
+                        <div class="related-nav__arrow">
+                          <i class="icon icon-right-arrow"></i>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="blogSingle-author mt-60">
+                <div class="blogSingle-author__image">
+                  <div class="bg-image js-lazy" data-bg="img/avatars/4.png"></div>
+                </div>
+
+                <div class="blogSingle-author__content ml-32 md:ml-16">
+                  <h4 class="blogSingle-author__title text-lg">Dianne Russell</h4>
+                  <p class="blogSingle-author__text text-sm leading-3xl mt-12">Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis.</p>
+
+                  <div class="blogSingle-author__socials socials mt-8">
+                    <div class="socials__wrap">
+                      <a data-barba href="#" class="text-black">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                      </a>
+                      <a data-barba href="#" class="text-black">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                      </a>
+                      <a data-barba href="#" class="text-black">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                      </a>
+                      <a data-barba href="#" class="text-black">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="blogPost -comments pt-60">
+              <div class="blogPost__content">
+                <h2 class="blogPost__title text-2xl fw-600">
+                  02 Comments
+                </h2>
+  
+                <ul class="comments__list mt-32">
+                  <li class="comments__item">
+                    {{- mixins.blogComment(blog_comments[0]) -}}
+                  </li>
+  
+                  <li class="comments__item">
+                    {{- mixins.blogComment(blog_comments[1]) -}}
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="respondForm mt-60 md:mt-40">
+                <h3 class="comments-reply-title text-2xl">
+                  Leave a Reply
+                </h3>
+  
+                <form class="respondForm__form row" action="#">
+                  <!-- <div class="respondForm__notes col-12">
+                    <span>Your email address will not be published</span>
+                  </div> -->
+
+                  <div class="col-12">
+                    <textarea name="comment" id="comment" placeholder="Your Comment" rows="5"></textarea>
+                  </div>
+                  <div class="col-12 mt-20">
+                    <input type="text" name="userName" placeholder="Your Name">
+                  </div>
+                  <div class="col-12 mt-20">
+                    <input type="text" name="email" placeholder="Your Email">
+                  </div>
+                  <div class="col-12 mt-20">
+                    <input type="text" name="userName" placeholder="Website">
+                  </div>
+  
+                  <div class="form-checkbox col-12 mt-24">
+                    <label>
+                      <span class="checkbox-wrap">
+                        <input name="wp-comments-cookies-consent" type="checkbox">
+                        <span></span>
+                      </span>
+                      Save my name, email, and website in this browser for the next time I comment.
+                    </label>
+                  </div>
+  
+                  <div class="col-12 mt-24">
+                    <button type="submit" name="submit" id="submit" class="button -md -accent text-white">
+                      post comment
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="blogSidebar">
+            <div class="blogSidebar__item">
+              <div class="search">
+                <form action="post">
+                  <input class="field" type="text" placeholder="Search">
+                  <button class="submit" type="submit">
+                    <i class="icon" data-feather="search"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">Categories</h5>
+
+              <div class="category mt-20">
+                <div class="category__item">
+                  <a data-barba href="#">Architecture</a>
+                  <span>(76)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Exterior</a>
+                  <span>(52)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Furniture</a>
+                  <span>(160)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Interior</a>
+                  <span>(91)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Structures</a>
+                  <span>(56)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Urban</a>
+                  <span>(34)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">RECENT POSTS</h5>
+
+              <div class="recent mt-20">
+                {% for item in range(0,3) %}
+                  <a data-barba href="#" class="recent__item">
+                    <div class="recent__image">
+                      <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/instagram/{{ loop.index }}.jpg"></div>
+                    </div>
+
+                    <div class="recent__content ml-20">
+                      <div class="text-black">Biophilic design in office spaces</div>
+                      <div class="text-accent mt-4">APRIL 06, 2021</div>
+                    </div>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">#hellix</h5>
+
+              <div class="instagram mt-20">
+                <div class="row no-gutters instagram">
+                  {% for item in range(0,6) %}
+                    <div class="col-4">
+                      <a data-barba href="#" class="instagram__item">
+                        <div class="instagram__image">
+                          <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/instagram/{{ loop.index }}.jpg"></div>
+                        </div>
+
+                        <div class="instagram__content">
+                          <i class="icon fa fa-instagram" aria-hidden="true"></i>
+                        </div>
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">TAGS</h5>
+
+              <div class="tags x-gap-10 y-gap-10 mt-20">
+                {% for item in [ 'INTERIOR', 'ART', 'HOUSE', 'EXTERIOR', 'BUILDINGS', 'DESIGN' ] %}
+                  <div class="tags__item">
+                    <a data-barba href="#">{{ item }}</a>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

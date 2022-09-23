@@ -1,0 +1,165 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/13.jpg',
+    title: 'Shop Cart',
+    subtitle: 'PRODUCTS'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row x-gap-60">
+        <div class="col-lg">
+          <div class="shopCart-header sm:d-none">
+            <div class="row no-gutters justify-content-between">
+              <div class="col-md-4">
+                <div class="shopCart-header__title">
+                  PRODUCT
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="shopCart-header__title">
+                  PRICE
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="shopCart-header__title">
+                  QUANTITY
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="shopCart-header__title">
+                  SUBTOTAL
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shopCart-products">
+            {% for item in range(0,3) %}
+              <div class="shopCart-products__item">
+                <div class="row no-gutters y-gap-10 justify-content-between">
+                  <div class="shopCart-products__cross">
+                    <i class="icon" data-feather="x"></i>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="shopCart-products__product">
+                      <div class="image">
+                        <div class="bg-image js-lazy" data-bg="img/shop/products/{{ loop.index }}.jpg"></div>
+                      </div>
+                      <div class="title">Grey Velvet Chair</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 sm:mt-16">
+                    <div class="d-flex h-100 align-items-center">
+                      <div class="shopCart-products__title d-none sm:d-block mr-8">
+                        PRICE
+                      </div>
+
+                      <div class="shopCart-products__price text-grey">
+                        $350.00
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="d-flex h-100 align-items-center">
+                      <div class="shopCart-products__title d-none sm:d-block mr-8">
+                        QUANTITY
+                      </div>
+
+                      <div class="shopCart-products__quantity text-grey">
+                        1
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <div class="d-flex h-100 align-items-center">
+                      <div class="shopCart-products__title d-none sm:d-block mr-8">
+                        SUBTOTAL
+                      </div>
+
+                      <div class="shopCart-products__subtotal text-grey">
+                        $350.00
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="shopCart-footer mt-30">
+            <div class="row justify-content-between y-gap-32">
+              <div class="col-auto">
+                <div class="shopCart-footer__item">
+                  <form action="post">
+                    <input type="text" placeholder="Coupon Code">
+                  </form>
+
+                  <button class="button -md -dark text-white ml-20">APPLY COUPON</button>
+                </div>
+              </div>
+
+              <div class="col-auto">
+                <div class="shopCart-footer__item">
+                  <button class="button -md -grey text-white">UPDATE CART</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-auto">
+          <div class="shopCart-sidebar">
+            <div class="shopCart-sidebar__totals">
+              <h5 class="title">
+                CART TOTALS
+              </h5>
+
+              <div class="item">
+                <span class="fw-600 text-black">Subtotal</span>
+                <span class="text-grey">$1.298</span>
+              </div>
+
+              <div class="item">
+                <span class="fw-600 text-black">Total</span>
+                <span class="text-grey">$3.298</span>
+              </div>
+            </div>
+
+            <div class="shopCart-sidebar__button">
+              <button class="button -md -accent col-12 text-white">PROCEED TO CHECKOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

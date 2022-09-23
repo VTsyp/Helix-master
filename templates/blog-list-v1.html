@@ -1,0 +1,194 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/12.jpg',
+    title: 'Blog List',
+    subtitle: 'News'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="blogSection pr-30 lg:pr-0">
+            {% for item in range(0,3) %}
+              <div class="blogCard mb-30">
+                <div class="blogCard__image">
+                  <div class="ratio ratio-93:53 bg-image js-lazy" data-bg="img/blog/page/{{ loop.index }}.jpg"></div>
+                </div>
+
+                <div class="blogCard__content mt-20">
+                  <div class="blogCard__category x-gap-20 mb-8">
+                    <a class="uppercase text-accent" href="#">APRIL 06, 2021</a>
+                    <a class="uppercase text-accent" href="#">Floyd Miles</a>
+                  </div>
+
+                  <h4 class="blogCard__title text-2xl fw-600">Why invest in greening your office</h4>
+            
+                  <p class="blogCard__text mt-20">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+                  <div class="blogCard__link mt-20">
+                    <a data-barba href="#" class="button -simple text-black">Read More</a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="row justify-content-center mt-80 md:mt-32">
+            <div class="col-auto">
+              <div class="pagination -section">
+                <div class="pagination__nav">
+                  <a data-barba href="#" class="nav-icon -left">
+                    <div class="nav-icon__circle">
+                      <i class="icon icon-left-arrow"></i>
+                    </div>
+                  </a>
+                </div>
+                
+                <div class="pagination__content">
+                  <a data-barba href="#">1</a>
+                  <a data-barba href="#">2</a>
+                  <a data-barba href="#" class="is-active">3</a>
+                  <a data-barba href="#">4</a>
+                  <span>...</span>
+                  <a data-barba href="#">16</a>
+                </div>
+
+                <div class="pagination__nav">
+                  <a data-barba href="#" class="nav-icon -right">
+                    <div class="nav-icon__circle">
+                      <i class="icon icon-right-arrow"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="blogSidebar">
+            <div class="blogSidebar__item">
+              <div class="search">
+                <form action="post">
+                  <input class="field" type="text" placeholder="Search">
+                  <button class="submit" type="submit">
+                    <i class="icon" data-feather="search"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">Categories</h5>
+
+              <div class="category mt-20">
+                <div class="category__item">
+                  <a data-barba href="#">Architecture</a>
+                  <span>(76)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Exterior</a>
+                  <span>(52)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Furniture</a>
+                  <span>(160)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Interior</a>
+                  <span>(91)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Structures</a>
+                  <span>(56)</span>
+                </div>
+                <div class="category__item">
+                  <a data-barba href="#">Urban</a>
+                  <span>(34)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">RECENT POSTS</h5>
+
+              <div class="recent mt-20">
+                {% for item in range(0,3) %}
+                  <a data-barba href="#" class="recent__item">
+                    <div class="recent__image">
+                      <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/instagram/{{ loop.index }}.jpg"></div>
+                    </div>
+
+                    <div class="recent__content ml-20">
+                      <div class="text-black">Biophilic design in office spaces</div>
+                      <div class="text-accent mt-4">APRIL 06, 2021</div>
+                    </div>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">#hellix</h5>
+
+              <div class="instagram mt-20">
+                <div class="row no-gutters instagram">
+                  {% for item in range(0,6) %}
+                    <div class="col-4">
+                      <a data-barba href="#" class="instagram__item">
+                        <div class="instagram__image">
+                          <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/instagram/{{ loop.index }}.jpg"></div>
+                        </div>
+
+                        <div class="instagram__content">
+                          <i class="icon fa fa-instagram" aria-hidden="true"></i>
+                        </div>
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="blogSidebar__item">
+              <h5 class="blogSidebar__title">TAGS</h5>
+
+              <div class="tags x-gap-10 y-gap-10 mt-20">
+                {% for item in [ 'INTERIOR', 'ART', 'HOUSE', 'EXTERIOR', 'BUILDINGS', 'DESIGN' ] %}
+                  <div class="tags__item">
+                    <a data-barba href="#">{{ item }}</a>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

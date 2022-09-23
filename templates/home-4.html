@@ -1,0 +1,335 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/header/header-3.njk" import headerType3 %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerType3(
+    headerClass = "-bottom-border",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  <section data-anim-wrap class="mainSlider -type-4 swiper-container js-mainSlider-type-4">
+    <div class="mainSlider__lines"></div>
+
+    <div class="swiper-wrapper">
+      {% for item in [
+        'The luxury residence in forest',
+        'The House of Narrative Art',
+        'Catch seafood Restaurant'
+      ] %}
+        <div class="swiper-slide">
+          <div data-parallax="0.6" class="mainSlider__image" data-swiper-parallax="40%">
+            <img data-parallax-target class="swiper-lazy" src="img/main-sliders/home-4/{{ loop.index }}.jpg" alt="Slider image">
+          </div>
+
+          <div class="container-fluid h-100">
+            <div class="mainSlider__content js-content">
+              <div class="row align-items-center md:justify-content-center">
+                <div class="col-xl-10 col-lg-11 offset-lg-1 col-sm-9 sm:px-24">
+                  <div data-split="lines" {% if loop.index == 1 %}data-anim="split-lines"{% endif %} class="js-title-wrap">
+                    <h1 class="mainSlider__title text-white js-title">
+                      {{ item }} 				
+                    </h1>
+                  </div>
+
+                  <div class="col-xl-4 col-lg-6 col-md-8 px-0">
+                    <div class="mainSlider__text text-white mt-16 js-text">
+                      <p>We’re from Poland, we passioned with the space & create the values vsustainable over time</p>
+                    </div>
+  
+                    <a data-barba href="#" class="mainSlider__button button -simple text-white mt-20 js-button">
+                      VIEW PROJECT
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="navigation -slider -white js-navigation">
+      <div class="navigation__content">
+        <div class="navigation__content_item js-navigation-item is-active">
+          <span class="text-grey">NEXT PROJECT</span>
+          <div>The Luxury Residence in Forest</div>
+        </div>
+        <div class="navigation__content_item js-navigation-item">
+          <span class="text-grey">NEXT PROJECT</span>
+          <div>The House of The Narrative Art</div>
+        </div>
+        <div class="navigation__content_item js-navigation-item">
+          <span class="text-grey">NEXT PROJECT</span>
+          <div>Catch seafood Restaurant</div>
+        </div>
+      </div>
+      <div class="navigation__item js-nav-prev">
+        <i class="icon icon-left-arrow"></i>
+      </div>
+      <div class="navigation__item js-nav-next">
+        <i class="icon icon-right-arrow"></i>
+      </div>
+    </div>
+
+    <div class="mainSlider__socials js-socials md:d-none">
+      <div data-anim-child="slide-up" class="mainSlider__socials_item">
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="mainSlider__info md:d-none" data-anim-child="slide-up delay-6">
+      {% for item in [
+        { icon: 'icon-rocket', title: '+(123) 1234-567-8901' },
+        { icon: 'icon-rocket', title: 'hello@hellix.com' },
+        { icon: 'icon-rocket', title: 'Mon - Sat 8:00 - 17:30, Sunday - CLOSED' }
+      ] %}
+        <div class="mainSlider__info__item">
+          <i class="mainSlider__info__icon text-white {{ item.icon }}"></i>
+          <a data-barba href="#" class="mainSlider__info__text text-white">{{ item.title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md background-color">
+    <div class="container">
+      <div data-anim-wrap class="row justify-content-between align-items-center">
+        <div class="col-lg-5 col-md-10">
+          <div data-anim-child="slide-right delay-3" class="sectionHeading -left-line -about pr-12 lg:pr-0">
+            <span class="sectionHeading__subtitle">OUR STORY</span>
+            <h2 class="sectionHeading__title">Welcome To Hellix Architecture & Interior</h2>
+            <p class="sectionHeading__text">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of.</p>
+            
+            <div class="sectionHeading__button">
+              <a data-barba href="#" class="button -md -dark text-white">DISCOVER MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-7">
+          <div class="background-cover -left -dark md:mt-60">
+            <div data-anim-child="img-right cover-black" class="ratio ratio-4:3">
+              <img class="ratio-img" src="img/backgrounds/1.jpg" alt="Image">
+            </div>
+
+            <button class="button-pulse -light">
+              <span class="button-pulse__btn bg-white mr-24">
+                <i class="icon text-black" data-feather="play"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div data-anim-wrap class="row justify-content-between align-items-center">
+        <div class="col-xl-6 col-lg-7">
+          <div class="background-cover -left -beige">
+            <div class="background-stroke-num -right">01</div>
+            <div data-anim-child="img-right cover-black" class="ratio ratio-3:4">
+              <img class="ratio-img" src="img/backgrounds/9.jpg" alt="Image">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-10">
+          <div data-anim-child="slide-right delay-3" class="sectionHeading -left-line -about pr-12 lg:pr-0 md:mt-48">
+            <span class="sectionHeading__subtitle">ABOUT COMPANY</span>
+            <h2 class="sectionHeading__title">Best Interior Solutions</h2>
+            <p class="sectionHeading__text mt-16">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of.</p>
+            <div class="sectionHeading__button mt-24">
+              <a data-barba href="#" class="button -simple text-black">VIEW MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div data-anim-wrap class="row justify-content-between align-items-center">
+        <div class="col-lg-5 col-md-10">
+          <div data-anim-child="slide-right delay-3" class="sectionHeading -left-line -about pr-12 lg:pr-0">
+            <span class="sectionHeading__subtitle">OUR SKILLS</span>
+            <h2 class="sectionHeading__title">The Core Company Values</h2>
+
+            <div class="lineChart mt-32 md:mt-24">
+              {% for item in charts -%}
+                <div data-anim-child="line-chart" class="lineChart__item" data-percent="{{ item.number }}">
+                  <div class="lineChart__content text-black text-sm">
+                    <p>{{ item.title }}</p>
+                    <p class="lineChart__number number js-number">0</p>
+                  </div>
+  
+                  <div class="lineChart-bar">
+                    <div class="lineChart-bar__bg"></div>
+                    <div class="lineChart-bar__item bg-black js-bar"></div>
+                  </div>
+                </div>
+              {% endfor -%}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-5 col-lg-7">
+          <div class="background-cover -right -dark md:mt-60">
+            <div class="background-stroke-num -left">02</div>
+            <div data-anim-child="img-right cover-black" class="ratio ratio-1:1">
+              <img class="ratio-img" src="img/backgrounds/3.jpg" alt="Image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div data-anim-wrap class="row justify-content-between align-items-center">
+        <div class="col-xl-6 col-lg-7">
+          <div class="background-cover -left -dark md:mt-60">
+            <div class="background-stroke-num -right">03</div>
+            <div data-anim-child="img-right cover-black" class="ratio ratio-3:4">
+              <img class="ratio-img" src="img/backgrounds/8.jpg" alt="Image">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-10">
+          <div data-anim-child="slide-right delay-3" class="sectionHeading -left-line -about pr-12 lg:pr-0 md:mt-48">
+            <span class="sectionHeading__subtitle">WORKS</span>
+            <h2 class="sectionHeading__title">Latest Projects</h2>
+            <p class="sectionHeading__text mt-16">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of.</p>
+            <div class="sectionHeading__button mt-24">
+              <a data-barba href="#" class="button -simple text-black">ALL PROJECTS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-lg">
+    <div class="container">
+      <div data-anim-wrap class="row justify-content-between align-items-center">
+        <div class="col-lg-5 col-md-10">
+          <div data-anim-child="slide-right delay-3" class="sectionHeading -left-line -about pr-12 lg:pr-0">
+            <span class="sectionHeading__subtitle">CONTACT US</span>
+            <h2 class="sectionHeading__title">Let's Start a Project</h2>
+
+            <div class="text-sm text-black leading-4xl mt-20 md:mt-16">
+              <p>T: +1 333 436 1747</p>
+              <p>M: hi@hellix.com</p>
+              <br>
+              <p>A: PO Box 16122 Collins Street West</p>
+              <p>Victoria 8007 Australia</p>
+            </div>
+          
+            <div class="sectionHeading__button mt-24 md:mt-20">
+              <a data-barba href="#" class="button -simple text-black">GET DIRECTIONS</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-5 col-lg-7">
+          <div class="background-cover -right -dark md:mt-60">
+            <div class="background-stroke-num -left">04</div>
+            <div class="">
+              <div id="map" class="map h-sm"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="layout-pb-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="sectionHeading -top-line text-center">
+            <span class="sectionHeading__subtitle">INSTAGRAM</span>
+            <h2 class="sectionHeading__title">#hellix</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row no-gutters layout-pt-sm">
+        {% for item in range(0,5) %}
+          <div class="col-lg col-6">
+            <a data-barba href="#" class="instagram__item">
+              <div class="instagram__image">
+                <div class="ratio ratio-129:112 bg-image js-lazy" data-bg="img/instagram/{{ loop.index }}.jpg"></div>
+              </div>
+
+              <div class="instagram__content">
+                <i class="icon fa fa-instagram" aria-hidden="true"></i>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pb-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="sectionHeading -top-line text-center">
+            <span class="sectionHeading__subtitle">SUBSCRIBE</span>
+            <h2 class="sectionHeading__title">Sign up to stay up to date</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center layout-pt-sm">
+        <div class="col-lg-5 col-sm-10">
+          <form class="form -subscription" action="POST">
+            <input placeholder="Your Email" type="email">
+            <button type="submit">
+              <i class="icon icon-send"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

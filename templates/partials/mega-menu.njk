@@ -1,0 +1,71 @@
+{% import "partials/_mixins.njk" as mixins %}
+
+<div class="mega">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="mega__menu">
+          <li class="mega__column">
+            {{ mixins.megaMenu({
+              title: 'List Types',
+              links: [
+                { url: 'portfolio-list-v1.html', title: 'List Style v1' },
+                { url: 'portfolio-list-v2.html', title: 'List Style v2' },
+                { url: 'portfolio-list-v3.html', title: 'List Style v3' },
+                { url: 'portfolio-list-v4.html', title: 'List Style v4' },
+                { url: 'portfolio-list-v5.html', title: 'List Style v5' },
+                { url: 'portfolio-list-v6.html', title: 'List Style v6' },
+                { url: 'portfolio-list-v7.html', title: 'List Style v7' },
+                { url: 'portfolio-list-v8.html', title: 'List Style v8' },
+                { url: 'portfolio-list-v9.html', title: 'List Style v9' },
+                { url: 'portfolio-list-v10.html', title: 'List Style v10' },
+                { url: 'portfolio-list-v11.html', title: 'List Style v11' }
+              ]
+            }) }}
+          </li>
+          
+          <li class="mega__column">
+            {{ mixins.megaMenu({
+              title: 'PORTFOLIO LAYOUTS',
+              links: [
+                { url: '#', title: 'Two Columns' },
+                { url: '#', title: 'Three Columns' },
+                { url: '#', title: 'Three Columns Wide' },
+                { url: '#', title: 'Four Columns' },
+                { url: '#', title: 'Four Columns Wide' },
+                { url: '#', title: 'Five Columns Wide' }
+              ]
+            }) }}
+          </li>
+          
+          <li class="mega__column">
+            {{ mixins.megaMenu({
+              title: 'SINGLE TYPES',
+              links: [
+                { url: 'portfolio-single-v1.html', title: 'Single Type v1' },
+                { url: 'portfolio-single-v2.html', title: 'Single Type v2' },
+                { url: 'portfolio-single-v3.html', title: 'Single Type v3' },
+                { url: 'portfolio-single-v4.html', title: 'Single Type v4' },
+                { url: 'portfolio-single-v5.html', title: 'Single Type v5' },
+                { url: 'portfolio-single-v6.html', title: 'Single Type v6' },
+                { url: 'portfolio-single-v7.html', title: 'Single Type v7' }
+              ]
+            }) }}
+          </li>
+          
+          <li class="mega__column">
+            {{ mixins.megaMenu({
+              title: 'HOVER TYPES',
+              links: [
+                { url: '#', title: 'Zoom' },
+                { url: '#', title: 'Float' },
+                { url: '#', title: 'Slide From Bottom' },
+                { url: '#', title: 'Slide From Right' }
+              ]
+            }) }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,219 @@
+{% macro desktopNav( textStyle="text-white" ) %}
+  <div class="menu js-menu ">
+    <div class="mobile__background js-mobile-bg"></div>
+
+    <div class="menu__container">
+      <div class="mobile__back js-nav-list-back pointer-events-none">
+        <a data-barba href="#">Home</a>
+      </div>
+
+      <ul class="nav js-navList ">
+        <li class="{{ textStyle }} menu-item-has-children">
+          <a data-barba href="#">Home</a>
+
+          <ul class="nav__submenu">
+            <li class="nav__submenu_item">
+              <a data-barba href="index.html">Home 1</a>
+            </li>
+            {% for item in range(0, 9) %}
+              <li class="nav__submenu_item">
+                <a data-barba href="home-{{ loop.index + 1 }}.html">Home {{ loop.index + 1 }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="{{ textStyle }} menu-item-has-children">
+          <a data-barba href="#">Pages</a>
+
+          <ul class="nav__submenu">
+            {% for item in [
+              { title: 'About Us', link: 'about-us' },
+              { title: 'About Me', link: 'about-me' },
+              { title: 'Contact Us', link: 'contact-us' },
+              { title: 'Services Single', link: 'services-single' },
+              { title: 'Team', link: 'team' },
+              { title: 'Pricing', link: 'pricing' },
+              { title: 'Faq', link: 'faq' },
+              { title: 'Coming Soon', link: 'coming-soon' },
+              { title: '404', link: '404' },
+              { title: 'Ui Elements', link: 'ui-elements' }
+            ] %}
+              <li class="nav__submenu_item">
+                <a data-barba href="{{ item.link }}.html">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="{{ textStyle }} menu-item-has-children">
+          <a data-barba href="#">Services</a>
+
+          <ul class="nav__submenu">
+            <li class="nav__submenu_item">
+              <a data-barba href="#">Design & Planning</a>
+            </li>
+            <li class="nav__submenu_item">
+              <a data-barba href="#">Exterior Design</a>
+            </li>
+            <li class="nav__submenu_item">
+              <a data-barba href="#">Custom Solutions</a>
+            </li>
+            <li class="nav__submenu_item">
+              <a data-barba href="#">Furniture & Decor</a>
+            </li>
+            <li class="nav__submenu_item">
+              <a data-barba href="#">Creating Concept</a>
+            </li>
+            <li class="nav__submenu_item">
+              <a data-barba href="#">Author’s Contro</a>
+            </li>
+          </ul>
+        </li>
+        <li class="{{ textStyle }} -has-mega-menu menu-item-has-children">
+          <a data-barba href="#">Portfolio</a>
+
+          {% include "partials/mega-menu.njk" %}
+          
+          <ul class="nav__submenu md:d-block d-none">
+            <li class="nav__submenu_item menu-item-has-children">
+              <a data-barba href="#">List Types</a>
+
+              <ul class="nav__submenu md:d-block d-none">
+                {% for item in [
+                  { title: 'List Style v1', link: 'portfolio-list-v1' },
+                  { title: 'List Style v2', link: 'portfolio-list-v2' },
+                  { title: 'List Style v3', link: 'portfolio-list-v3' },
+                  { title: 'List Style v4', link: 'portfolio-list-v4' },
+                  { title: 'List Style v5', link: 'portfolio-list-v5' },
+                  { title: 'List Style v6', link: 'portfolio-list-v6' },
+                  { title: 'List Style v7', link: 'portfolio-list-v7' },
+                  { title: 'List Style v8', link: 'portfolio-list-v8' },
+                  { title: 'List Style v9', link: 'portfolio-list-v9' },
+                  { title: 'List Style v10', link: 'portfolio-list-v10' },
+                  { title: 'List Style v11', link: 'portfolio-list-v11' }
+                ] %}
+                  <li class="nav__submenu_item">
+                    <a data-barba href="{{ item.link }}.html">{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+
+            <li class="nav__submenu_item menu-item-has-children">
+              <a data-barba href="#">PORTFOLIO LAYOUTS</a>
+
+              <ul class="nav__submenu md:d-block d-none">
+                {% for item in [
+                  { title: 'Two Columns', link: '#' },
+                  { title: 'Three Columns', link: '#' },
+                  { title: 'Three Columns Wide', link: '#' },
+                  { title: 'Four Columns', link: '#' },
+                  { title: 'Four Columns Wide', link: '#' },
+                  { title: 'Five Columns Wide', link: '#' }
+                ] %}
+                  <li class="nav__submenu_item">
+                    <a data-barba href="{{ item.link }}.html">{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+
+            <li class="nav__submenu_item menu-item-has-children">
+              <a data-barba href="#">SINGLE TYPES</a>
+
+              <ul class="nav__submenu md:d-block d-none">
+                {% for item in [
+                  { title: 'Single Type v1', link: 'portfolio-single-v1' },
+                  { title: 'Single Type v2', link: 'portfolio-single-v2' },
+                  { title: 'Single Type v3', link: 'portfolio-single-v3' },
+                  { title: 'Single Type v4', link: 'portfolio-single-v4' },
+                  { title: 'Single Type v5', link: 'portfolio-single-v5' },
+                  { title: 'Single Type v6', link: 'portfolio-single-v6' },
+                  { title: 'Single Type v7', link: 'portfolio-single-v7' }
+                ] %}
+                  <li class="nav__submenu_item">
+                    <a data-barba href="{{ item.link }}.html">{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+
+            <li class="nav__submenu_item menu-item-has-children">
+              <a data-barba href="#">HOVER TYPES</a>
+
+              <ul class="nav__submenu md:d-block d-none">
+                {% for item in [
+                  { title: 'Zoom', link: '#' },
+                  { title: 'Float', link: '#' },
+                  { title: 'Slide From Bottom', link: '#' },
+                  { title: 'Slide From Right', link: '#' }
+                ] %}
+                  <li class="nav__submenu_item">
+                    <a data-barba href="{{ item.link }}.html">{{ item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="{{ textStyle }} menu-item-has-children">
+          <a data-barba href="#">Blog</a>
+
+          <ul class="nav__submenu">
+            {% for item in range(0,3) %}
+              <li class="nav__submenu_item">
+                <a data-barba href="blog-list-v{{ loop.index }}.html">Blog {{ loop.index }}</a>
+              </li>
+            {% endfor %}
+            <li class="nav__submenu_item">
+              <a data-barba href="blog-single.html">Blog Single</a>
+            </li>
+          </ul>
+        </li>
+        <li class="{{ textStyle }} menu-item-has-children">
+          <a data-barba href="#">Shop</a>
+
+          <ul class="nav__submenu">
+            {% for item in [
+              { title: 'Shop List 1', link: 'shop-list-v1' },
+              { title: 'Shop List 2', link: 'shop-list-v2' },
+              { title: 'Shop List 3', link: 'shop-list-v3' },
+              { title: 'Single', link: 'shop-single' },
+              { title: 'Cart', link: 'shop-cart' },
+              { title: 'Checkout', link: 'shop-checkout' },
+              { title: 'Complete Order', link: 'shop-complete' }
+            ] %}
+              <li class="nav__submenu_item">
+                <a data-barba href="{{ item.link }}.html">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="{{ textStyle }}">
+          <a data-barba href="#">Contacts</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mobile__footer js-mobile-footer">
+      <div class="mobile__socials">
+        <a data-barba href="#">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="mobile__copyright">
+        <img src="img/general/logo-light.svg" alt="logo" class="icon">
+        <p>© 2021 Hellix. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

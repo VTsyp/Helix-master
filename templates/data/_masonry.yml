@@ -1,0 +1,89 @@
+masonryGrid_4_9:
+  -
+    size: '-wide'
+    filter: ' modeling buildings'
+  -
+    size: ''
+    filter: ' architecture living_room'
+  -
+    size: ''
+    filter: ' buildings modeling'
+  -
+    size: ''
+    filter: ' living_room architecture'
+  -
+    size: '-wide'
+    filter: ' modeling buildings living_room'
+  -
+    size: ''
+    filter: ' architecture living_room'
+  -
+    size: ''
+    filter: ' architecture modeling'
+  -
+    size: ''
+    filter: ' buildings modeling'
+  -
+    size: ''
+    filter: ' modeling buildings living_room'
+
+masonryGrid_4:
+  -
+    size: '-wide'
+    filter: ' modeling buildings'
+  -
+    size: ''
+    filter: ' architecture living_room'
+  -
+    size: ''
+    filter: ' buildings modeling'
+  -
+    size: ''
+    filter: ' living_room architecture'
+  -
+    size: '-wide'
+    filter: ' modeling buildings living_room'
+  -
+    size: ''
+    filter: ' architecture modeling'
+
+masonryGrid_3:
+  -
+    filter: ' modeling buildings'
+  -
+    filter: ' architecture living_room'
+  -
+    filter: ' buildings modeling'
+  -
+    filter: ' living_room architecture'
+  -
+    filter: ' modeling buildings living_room'
+  -
+    filter: ' architecture modeling'
+
+
+masonryGrid_12:
+  -
+    filter: ' modeling buildings'
+  -
+    filter: ' architecture living_room'
+  -
+    filter: ' buildings modeling'
+  -
+    filter: ' living_room architecture'
+  -
+    filter: ' modeling buildings living_room'
+  -
+    filter: ' architecture modeling'
+  -
+    filter: ' modeling buildings'
+  -
+    filter: ' architecture living_room'
+  -
+    filter: ' buildings modeling'
+  -
+    filter: ' living_room architecture'
+  -
+    filter: ' modeling buildings living_room'
+  -
+    filter: ' architecture modeling'

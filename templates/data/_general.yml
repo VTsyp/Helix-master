@@ -1,0 +1,20 @@
+GENERAL:
+  projectName: Freshen
+  email: oder@freshen.com
+  address: Collins Street West, Victoria 8007, Australia.
+  phone: 00 0392 96 32
+  copyright: '© 2021 Freshen. Made with love.'
+
+mobile_actions:
+  -
+    icon: icon-shop
+    title: shop
+  -
+    icon: icon-heart
+    title: Wishlist
+  -
+    icon: icon-user
+    title: My Account
+  -
+    icon: icon-cart
+    title: Cart

@@ -1,0 +1,38 @@
+{% macro megaMenu(item) %}
+  <div class="mega__item">
+    <h4 class="mega__title">{{ item.title }}</h4>
+    <ul class="mega__list">
+      {% for link in item.links %}
+        <li><a data-barba href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}
+
+
+{% macro blogComment(entry) %}
+  <div class="comments__item-inner">
+    <div class="comments__img">
+      <div class="bg-image js-lazy" data-bg="{{ entry.img }}"></div>
+    </div>
+
+    <div class="comments__body">
+      <div class="comments__header">
+        <p class="text-accent">{{ entry.date }}</p>
+        <h4 class="mt-4">{{ entry.name }}</h4>
+      </div>
+
+      <div class="comments__text">
+        <p>
+          {{ entry.text }}
+        </p>
+      </div>
+
+      <div class="comments__reply">
+        <a data-barba href="#" class="button -underline text-accent">
+          Reply
+        </a>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

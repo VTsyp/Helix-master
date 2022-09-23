@@ -1,0 +1,114 @@
+{% from "partials/header/partials/desktop-nav.njk" import desktopNav %}
+
+{#
+headerClass = "-no-left-padding -vertical-sm -top-border -bottom-border",
+iconsClass = "-separate"
+#}
+{% macro headerType2(
+  headerClass="",
+  container=false,
+  firstBlockMargin="-margin-sm",
+  textColor="text-black",
+  bgColor="",
+  logoClass="",
+  iconsClass=""
+) %}
+  <!-- header start -->
+  <header class="header -home-2 {{ headerClass }} js-header">
+    <div class="header__bar {{ bgColor }} js-header-bar js-header-item">
+      {% if container %}<div class="container">{% endif %}
+        <div class="row justify-content-between align-items-center">
+
+          <div class="col-auto z-5 position-unset">
+            <div class="header__item {{ firstBlockMargin }}">
+              <div class="header__logo {{ logoClass }} js-header-logo">
+                <a data-barba href="index.html">
+                  <i class="icon icon-logo"></i>
+                </a>
+              </div>
+
+              {{ desktopNav(textStyle=textColor) }}
+            </div>
+          </div>
+
+
+          <div class="col-auto z-5 sm:pos-unset">
+            <div class="header__icons {{ iconsClass }}">
+              <div class="header__cart">
+                <a data-barba href="#">
+                  <i class="icon {{ textColor }} icon-cart"></i>
+                </a>
+
+                <div class="headerCart js-headerCart">
+                  <div class="headerCart__content">
+                    {% for item in range(0,2) %}
+                      <div class="headerCart__item">
+                        <div class="headerCart__img">
+                          <img src="img/main-sidebar/cart/{{ loop.index }}.jpg" alt="image">
+                        </div>
+
+                        <div class="headerCart__wrap">
+                          <h5 class="headerCart__title">Decorative palm</h5>
+                          <span class="headerCart__info">1 × $244.00</span>
+                        </div>
+
+                        <div class="headerCart__cross">
+                          <i class="icon icon-cross"></i>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                  <div class="headerCart__footer">
+                    <div class="headerCart__total">
+                      <span>Subtotal:</span>
+                      <span>$895</span>
+                    </div>
+                    
+                    <div class="headerCart__buttons">
+                      <a data-barba href="#" class="button -md -grey text-white col-12">VIEW CART</a>
+                      <a data-barba href="#" class="button -md -accent text-white col-12">CHECKOUT</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="header__search">
+                <button class="js-headerSearch-open">
+                  <i class="icon {{ textColor }} icon-search"></i>
+                </button>
+              </div>
+
+              <div class="header__menu">
+                <button type="button" class="nav-button-open md:d-none js-sidebar-open">
+                  <i class="icon {{ textColor }} icon-menu"></i>
+                </button>
+
+                <button type="button" class="nav-button-open d-none md:d-block js-nav-open">
+                  <i class="icon {{ textColor }} icon-menu"></i>
+                </button>
+
+                <button type="button" class="nav-button-close d-none md:d-block pointer-events-none js-nav-close">
+                  <i class="icon {{ textColor }} icon-cross"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      {% if container %}</div>{% endif %}
+
+      <div class="headerSearch js-headerSearch">
+        <div class="headerSearch__line"></div>
+        <form action="POST">
+          <i class="headerSearch__icon icon-search"></i>
+          <input type="search" placeholder="Type Your Search">
+        </form>
+        <button class="headerSearch__close js-headerSearch-close">
+          <i class="icon icon-cross {{ textColor }}"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+{% endmacro %}

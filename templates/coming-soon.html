@@ -1,0 +1,94 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block content %}
+
+  <section class="soon">
+    <div data-parallax="0.6" class="soon__bg">
+      <div data-parallax-target class="bg-image js-lazy" data-bg="img/backgrounds/6.jpg"></div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-xl-7 col-lg-9">
+          <div class="soon__content">
+            <h1 class="soon__title text-white">Coming Soon</h1>
+
+            <div class="soon__count mt-64">
+              <div class="row x-gap-48 y-gap-48 justify-content-between js-soon-timer">
+                <div class="col-lg-2 col-6">
+                  <div class="soon__count_item">
+                    <div class="js-soon-days">45</div>
+                    <div>DAYS</div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                  <div class="soon__count_item">
+                    <div class="js-soon-hours">12</div>
+                    <div>HOURS</div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                  <div class="soon__count_item">
+                    <div class="js-soon-minutes">04</div>
+                    <div>MINUTES</div>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                  <div class="soon__count_item">
+                    <div class="js-soon-seconds">28</div>
+                    <div>SECONDS</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="soon__newsletter mt-64">
+              <form action="POST">
+                <input placeholder="Your Email" type="email">
+
+                <button type="submit">
+                  <i class="icon icon-send"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="soon__socials socials">
+      <div class="socials__wrap">
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

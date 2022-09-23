@@ -1,0 +1,93 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/header/header-2.njk" import headerType2 %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerType2(
+    headerClass = "-margin-lg -home-9",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block content %}
+
+  <section class="mainSlider -type-9 swiper-container js-mainSlider-type-9">
+    <div class="swiper-wrapper">
+      {% for item in [
+        'Lakeshore Levels The New<br>American Remodel 2021',
+        'Lake Knowles Circle<br>Custom Home',
+        'Lavill Court<br>Custom Home',
+        '450 Northwind Rd<br>Home Renovation'
+      ] %}
+        <div class="swiper-slide">
+          <div data-parallax="0.6" class="mainSlider__image" data-swiper-parallax="50%">
+            <img data-parallax-target class="swiper-lazy" src="img/main-sliders/home-9/{{ loop.index }}.jpg" alt="Slider image">
+          </div>
+
+          <div class="row align-items-center">
+            <div class="mainSlider__content js-content">
+              <div class="col-lg-9 col-md-11">
+                <div class="mainSlider__subtitle text-white js-all-item">
+                  2021 - LONDON 
+                </div>
+
+                <h1 class="mainSlider__title text-white mt-24 js-all-item">
+                  {{ item | safe }}
+                </h1>
+
+                <div class="mainSlider__button mt-40 js-all-item">
+                  <a data-barba href="#" class="button -simple text-white">
+                    VIEW PROJECT
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+
+    <div class="pagination">
+      <div class="pagination__current">01</div>
+      <div class="pagination__line js-pagination"></div>
+      <div class="pagination__total">04</div>
+    </div>
+
+    <div class="mainSlider__socials">
+      <div class="socials">
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a data-barba href="#" class="text-white">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="mainSlider__scroll js-scroll md:d-none">
+      <div class="mainSlider__scroll_item">
+        Scroll
+        <div class="mainSlider__scroll_icon">
+          <i class="icon icon-right-arrow"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="mainSlider__copyright">
+      <span class="text-white">© 2021 Hellix. All rights reserved.</span>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,577 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/6.jpg',
+    title: 'UI Elements',
+    subtitle: 'explore the features'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h4 class="text-lg">Accordions</h4>
+
+          <div class="accordion -block js-accordion mt-40">
+            {% for item in [
+              { title: "Why won't my payment go through?" },
+              { title: 'How do I get a refund?' },
+              { title: 'How do I redeem a coupon?' },
+              { title: 'Changing account name' }
+            ] %}
+              <div class="accordion__item">
+                <div class="accordion__button">
+                  <button class="text-sm fw-600 text-black">{{ item.title }}</button>
+                  <div class="accordion__icon">
+                    <i class="icon text-black" data-feather="chevron-down"></i>
+                  </div>
+                </div>
+                <div class="accordion__content">
+                  <div class="accordion__content__inner">
+                    <p class="text-sm">Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <h4 class="text-lg">Tabs</h4>
+
+          <div class="tabs -buttons mt-40 js-tabs">
+            <div class="tabs__controls js-tabs-controls">
+              <button class="tabs__button is-active" data-tab-target=".-tab-item-1" type="button">
+                Items 1
+              </button>
+              <button class="tabs__button" data-tab-target=".-tab-item-2" type="button">
+                Items 2
+              </button>
+              <button class="tabs__button" data-tab-target=".-tab-item-3" type="button">
+                Items 3
+              </button>
+            </div>
+            <div class="tabs__content mt-16 js-tabs-content">
+              <div class="tabs__pane -tab-item-1 is-active">
+                <p class="text-sm">Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+              </div>
+              <div class="tabs__pane -tab-item-2">
+                <p class="text-sm">Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+              </div>
+              <div class="tabs__pane -tab-item-3">
+                <p class="text-sm">Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs -lines mt-48 js-tabs">
+            <div class="tabs__controls js-tabs-controls">
+              <button class="tabs__button is-active" data-tab-target=".-tab-item-1" type="button">
+                Items 1
+              </button>
+              <button class="tabs__button" data-tab-target=".-tab-item-2" type="button">
+                Items 2
+              </button>
+              <button class="tabs__button" data-tab-target=".-tab-item-3" type="button">
+                Items 3
+              </button>
+            </div>
+            <div class="tabs__content mt-16 js-tabs-content">
+              <div class="tabs__pane -tab-item-1 is-active">
+                <p class="text-sm">Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+              </div>
+              <div class="tabs__pane -tab-item-2">
+                <p class="text-sm">Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+              </div>
+              <div class="tabs__pane -tab-item-3">
+                <p class="text-sm">Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus. Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row y-gap-48">
+        <div class="col-lg-6">
+          <h4 class="text-lg">Table</h4>
+
+          <table class="table -striped mt-40">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Hour</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in range(0,4) %}
+                <tr>
+                  <td>Design UX and UI</td>
+                  <td>14</td>
+                  <td>3</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="col-lg-6">
+          <h4 class="text-lg">Message Boxes</h4>
+
+          <div class="row y-gap-20 pt-40">
+            {% for item in [
+              { class: "-info", title: "Info: User pending action" },
+              { class: "-warning", title: "Warning: User has to be admin" },
+              { class: "-error", title: "Error: Internal Server Error" },
+              { class: "-success", title: "Success: Updated members status" }
+            ] %}
+              <div class="col-12">
+                <div class="alert {{ item.class }}">
+                  <div class="alert__content">
+                    <div class="alert__title text-sm">
+                      {{ item.title }}
+                    </div>
+                    <div class="alert__icon">
+                      <i class="icon" data-feather="x"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4 class="text-lg">Buttons</h4>
+        </div>
+      </div>
+
+      <div class="row x-gap-20 y-gap-20 pt-20">
+        <div class="col-auto">
+          <button class="button -md -dark text-white">button 1</button>
+        </div>
+        <div class="col-auto">
+          <button class="button -md -dark -hovered text-white">BUTTON 1 HOVER</button>
+        </div>
+        <div class="col-auto">
+          <button class="button -md -secondary text-white">button 1</button>
+        </div>
+        <div class="col-auto">
+          <button class="button -md -secondary -hovered text-white">BUTTON 1 HOVER</button>
+        </div>
+      </div>
+
+      <div class="row x-gap-20 y-gap-20 pt-20">
+        <div class="col-auto">
+          <button class="button -md -accent text-white">BUTTON 3</button>
+        </div>
+        <div class="col-auto">
+          <button class="button -md -accent -hovered text-white">BUTTON 3 HOVER</button>
+        </div>
+        <div class="col-auto">
+          <button class="button -md -grey text-white">BUTTON 4</button>
+        </div>
+        <div class="col-auto">
+          <button class="button -md -grey -hovered text-white">BUTTON 4 HOVER</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md overflow-visible">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4 class="text-lg">Form</h4>
+
+          <div class="row mt-16">
+            <div class="col-lg-6">
+              <form action="post" class="row x-gap-24 y-gap-40">
+                <div class="col-12">
+                  <input type="text" name="InputText" placeholder="Input Text">
+                </div>
+  
+                <div class="col-12">
+                  <select class="selectize wide js-selectize">
+                    <option data-display="Select">Country</option>
+                    <option value="Greece">Greece</option>
+                    <option value="USA">USA</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                  </select>
+                </div>
+  
+                <div class="col-12">
+                  <textarea name="notes" id="form_notes" rows="5" placeholder="Textarea"></textarea>
+                </div>
+              </form>
+            </div>
+
+
+            <div class="col-lg-6">
+              <form action="post" class="row x-gap-24 y-gap-40">
+                <div class="col-12">
+                  <input type="text" name="InputText" placeholder="Input Text">
+                </div>
+
+                <div class="col-12">
+                  <select class="selectize wide js-selectize" multiple='multiple'>
+                    <option value="1">Some option</option>
+                    <option value="2">Another option</option>
+                    <option value="3">Another option</option>
+                    <option value="4">Potato</option>
+                    <option value="5">Potato</option>
+                  </select>
+                </div>
+  
+                <div class="col-12">
+                  <select class="selectize wide js-selectize-seachable">
+                    <option data-display="Select">Nothing</option>
+                    <option value="1">Some option</option>
+                    <option value="2">Another option</option>
+                    <option value="3">Potato</option>
+                    <option value="4">Potato</option>
+                    <option value="5">Potato</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row y-gap-48">
+        <div class="col-lg-6">
+          <div class="">
+            <h4 class="text-lg">Tooltips</h4>
+
+            <div class="d-flex mt-24">
+              <div class="tooltip -top bg-grey">
+                Top
+                <div class="tooltip__content">
+                  Top
+                </div>
+              </div>
+              <div class="tooltip -bottom bg-grey ml-12">
+                Bottom
+                <div class="tooltip__content">
+                  Bottom
+                </div>
+              </div>
+              <div class="tooltip -left bg-grey ml-12">
+                Left
+                <div class="tooltip__content">
+                  Left
+                </div>
+              </div>
+              <div class="tooltip -right bg-grey ml-12">
+                Right
+                <div class="tooltip__content">
+                  Right
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-56">
+            <h4 class="text-lg">Range Slider</h4>
+
+            <div class="">
+              <div slider id="slider-distance">
+                <div>
+                  <div inverse-left style="width:70%;"></div>
+                  <div inverse-right style="width:70%;"></div>
+                  <div range style="left:30%; right:40%;"></div>
+
+                  <span thumb style="left:30%;"></span>
+                  <span thumb style="left:60%;"></span>
+
+                  <div sign style="left:30%;">
+                    <span id="value">30</span>
+                  </div>
+                  <div sign style="left:60%;">
+                    <span id="value">60</span>
+                  </div>
+                </div>
+
+                <input type="range" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+                  this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+                  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                  var children = this.parentNode.childNodes[1].childNodes;
+                  children[1].style.width=value+'%';
+                  children[5].style.left=value+'%';
+                  children[7].style.left=value+'%';children[11].style.left=value+'%';
+                  children[11].childNodes[1].innerHTML=this.value;
+                "/>
+               
+                <input type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+                  this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+                  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                  var children = this.parentNode.childNodes[1].childNodes;
+                  children[3].style.width=(100-value)+'%';
+                  children[5].style.right=(100-value)+'%';
+                  children[9].style.left=value+'%';children[13].style.left=value+'%';
+                  children[13].childNodes[1].innerHTML=this.value;
+                "/>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="row x-gap-48 y-gap-48">
+            <div class="col-lg-4 col-6">
+              <h4 class="text-sm">Radiobox</h4>
+
+              <div class="mt-20">
+                <div class="form-radio">
+                  <div class="radio">
+                    <input type="radio" name="radio" checked="checked">
+                    <div class="radio__mark">
+                      <div class="radio__icon"></div>
+                    </div>
+                  </div>
+                  <label>Items</label>
+                </div>
+
+                <div class="form-radio mt-12">
+                  <div class="radio">
+                    <input type="radio" name="radio">
+                    <div class="radio__mark">
+                      <div class="radio__icon" data-feather="check"></div>
+                    </div>
+                  </div>
+                  <label>Items</label>
+                </div>
+
+                <div class="form-radio mt-12">
+                  <div class="radio">
+                    <input type="radio" name="radio">
+                    <div class="radio__mark">
+                      <div class="radio__icon" data-feather="check"></div>
+                    </div>
+                  </div>
+                  <label>Items</label>
+                </div>
+
+                <div class="form-radio mt-12">
+                  <div class="radio">
+                    <input type="radio" name="radio">
+                    <div class="radio__mark">
+                      <div class="radio__icon" data-feather="check"></div>
+                    </div>
+                  </div>
+                  <label>Items</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-6">
+              <h4 class="text-sm">Checkbox</h4>
+
+              <div class="mt-20">
+                <div class="form-checkbox">
+                  <div class="checkbox">
+                    <input type="checkbox">
+                    <div class="checkbox__mark">
+                      <div class="checkbox__icon" data-feather="check"></div>
+                    </div>
+                  </div>
+                  <label for="items">Items</label>
+                </div>
+
+                <div class="form-checkbox mt-16">
+                  <div class="checkbox">
+                    <input type="checkbox" checked="checked">
+                    <div class="checkbox__mark">
+                      <div class="checkbox__icon" data-feather="check"></div>
+                    </div>
+                  </div>
+
+                  <label for="items">Items</label>
+                </div>
+
+                <div class="form-checkbox mt-16">
+                  <div class="checkbox">
+                    <input type="checkbox">
+                    <div class="checkbox__mark">
+                      <div class="checkbox__icon" data-feather="check"></div>
+                    </div>
+                  </div>
+
+                  <label for="items">Items</label>
+                </div>
+
+                <div class="form-checkbox mt-16">
+                  <div class="checkbox">
+                    <input type="checkbox">
+                    <div class="checkbox__mark">
+                      <div class="checkbox__icon" data-feather="check"></div>
+                    </div>
+                  </div>
+
+                  <label for="items">Items</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-6">
+              <h4 class="text-sm">Switch</h4>
+
+              <div class="mt-20">
+                <div class="form-switch">
+                  <div class="switch">
+                    <input type="checkbox">
+                    <span class="switch__slider"></span>
+                  </div>
+                  <label>Items</label>
+                </div>
+
+                <div class="form-switch mt-24">
+                  <div class="switch">
+                    <input type="checkbox" checked="checked">
+                    <span class="switch__slider"></span>
+                  </div>
+                  <label>Items</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-56">
+            <h4 class="text-lg">Progress bars</h4>
+
+            <div class="lineChart mt-12">
+              {% for item in charts -%}
+                <div data-anim="line-chart" class="lineChart__item" data-percent="{{ item.number }}">
+                  <div class="lineChart__content text-black text-sm">
+                    <p></p>
+                    <p class="lineChart__number number">
+                      <span class="js-number">0</span>
+                      <span>%</span>
+                    </p>
+                  </div>
+  
+                  <div class="lineChart-bar">
+                    <div class="lineChart-bar__bg"></div>
+                    <div class="lineChart-bar__item bg-black js-bar"></div>
+                  </div>
+                </div>
+              {% endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-md layout-pb-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4 class="text-lg">Typography</h4>
+          <h5 class="text-base mt-60">Course Description</h5>
+          <p class=" mt-20">Aliquam hendrerit sollicitudin purus, quis rutrum mi accumsan nec. Quisque bibendum orci ac nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Ut et adipiscing erat. Curabitur this is a text link libero tempus congue.</p>
+          <p class="mt-16">Duis mattis laoreet neque, et ornare neque sollicitudin at. Proin sagittis dolor sed mi elementum pretium. Donec et justo ante. Vivamus egestas sodales est, eu rhoncus urna semper eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique elit lobortis purus bibendum, quis dictum metus mattis. Phasellus posuere felis sed eros porttitor mattis. Curabitur massa magna, tempor in blandit id, porta in ligula. Aliquam laoreet nisl massa, at interdum mauris sollicitudin et.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="quote text-black mt-48">
+            This is going to be a challenging dance. Our teachers are true change makers. They are providers and they are leaders and this period in history is going to shine a light on their vital role in our children’s emotional health.
+          </div>
+        </div>
+      </div>
+
+      <div class="row y-gap-48 mt-60">
+        <div class="col-md-6">
+          <h5 class="text-base">Requirements</h5>
+          <ul class="list mt-12">
+            <li class="text-sm text-grey leading-6xl">We do not require any previous experience or pre-defined skills to take this course. A great orientation would be enough to master UI/UX design.</li>
+            <li class="text-sm text-grey leading-6xl mt-8">A computer with a good internet connection.</li>
+            <li class="text-sm text-grey leading-6xl mt-8">Adobe Photoshop (OPTIONAL)</li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 offset-md-1">
+          <h5 class="text-base">What you'll learn</h5>
+          <div class="mt-12">
+            <div class="d-flex align-items-center mt-8">
+              <div class="icon-circle bg-grey">
+                <i class="icon-circle__icon text-white" data-feather="check"></i>
+              </div>
+              <p class="text-sm text-grey leading-6xl ml-12">Become a UI/UX designer.</p>
+            </div>
+            <div class="d-flex align-items-center mt-8">
+              <div class="icon-circle bg-grey">
+                <i class="icon-circle__icon text-white" data-feather="check"></i>
+              </div>
+              <p class="text-sm text-grey leading-6xl ml-12">You will be able to start earning money Figma skills.</p>
+            </div>
+            <div class="d-flex align-items-center mt-8">
+              <div class="icon-circle bg-grey">
+                <i class="icon-circle__icon text-white" data-feather="check"></i>
+              </div>
+              <p class="text-sm text-grey leading-6xl ml-12">Build a UI project from beginning to end.</p>
+            </div>
+            <div class="d-flex align-items-center mt-8">
+              <div class="icon-circle bg-grey">
+                <i class="icon-circle__icon text-white" data-feather="check"></i>
+              </div>
+              <p class="text-sm text-grey leading-6xl ml-12">Work with colors & fonts.</p>
+            </div>
+            <div class="d-flex align-items-center mt-8">
+              <div class="icon-circle bg-grey">
+                <i class="icon-circle__icon text-white" data-feather="check"></i>
+              </div>
+              <p class="text-sm text-grey leading-6xl ml-12">You will create your own UI Kit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

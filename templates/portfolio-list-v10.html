@@ -1,0 +1,74 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/12.jpg',
+    title: 'Portfolio List',
+    subtitle: 'OUR WORKS'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="section-filter px-16">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <div class="filter-button-group text-dark fw-500 mt-32">
+            <button class="button mr-20 btn-active" data-filter="*">All</button>
+            <button class="button mr-20" data-filter=".modeling">3d Modeling</button>
+            <button class="button mr-20" data-filter=".architecture">Architecture</button>
+            <button class="button mr-20" data-filter=".buildings">Buildings</button>
+            <button class="button mr-20" data-filter=".living_room">Living Room</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="masonry -col-3 layout-pt-sm js-masonry js-masonry-no-filter">
+        <div class="masonry__sizer"></div>
+        
+        {% for item in masonryGrid_12.slice(0, 9) -%}
+          <div class="masonry__item {{ item.filter }}">
+            <a data-barba href="#" class="portfolioCard -type-1 ratio">
+              <div class="portfolioCard__image">
+                <img class="ratio-img js-lazy" src="#" data-src="img/portfolio/cards/{{ loop.index }}.jpg" alt="project image">
+              </div>
+
+              <div class="portfolioCard__content px-30 py-30">
+                <span class="portfolioCard__category text-sm uppercase text-beige-dark">LIVING</span>
+                <h3 class="portfolioCard__title text-lg fw-600 mt-8">London Apartments</h3>
+              </div>
+            </a>
+          </div>
+        {% endfor -%}
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center mt-40">
+        <div class="col-auto">
+          <button class="button -md -dark text-white">Load more</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

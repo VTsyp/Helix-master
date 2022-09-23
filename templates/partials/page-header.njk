@@ -1,0 +1,29 @@
+{% macro pageHeader(entry) %}
+  <section class="page-masthead">
+    <div data-parallax="0.6" class="page-masthead__bg">
+      <div data-parallax-target class="bg-image js-lazy" data-bg="{{ entry.img }}"></div>
+    </div>
+
+    <div class="container">
+      <div class="page-masthead__content">
+        <div class="row justify-content-between md:justify-content-center align-items-center">
+          <div class="col-lg-9 col-md-10">
+            <div data-anim="slide-up delay-1">
+              <div class="page-masthead__subtitle">{{ entry.subtitle }}</div>
+              <div class="page-masthead__back_title">{{ entry.title }}</div>
+              <h1 class="page-masthead__title text-white">{{ entry.title }}</h1>
+            </div>
+          </div>
+  
+          <div class="col-auto">
+            <div data-anim="slide-up delay-1" class="page-masthead-bread text-white md:mt-24">
+              <a data-barba href="index.html" class="page-masthead-bread__item">Home</a>
+              /
+              <a data-barba href="#" class="page-masthead-bread__item ">{{ entry.title }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endmacro %}

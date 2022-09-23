@@ -1,0 +1,72 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/12.jpg',
+    title: 'Portfolio List',
+    subtitle: 'OUR WORKS'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div
+            class="sectionSlider js-sectionSlider"
+            data-gap="30"
+            data-slider-col="base-1 lg-1 md-1 sm-1"
+            data-center
+            data-loop
+            data-pagination
+            data-cursor
+            data-cursor-label="DRAG"
+          >
+            <div class="swiper-wrapper">
+              {% for item in range(0,3) %}
+                <div class="swiper-slide">
+                  <a data-barba data-cursor data-cursor-label="DRAG" href="#" class="portfolio">
+                    <div class="portfolio__image">
+                      <div class="ratio ratio-16:9">
+                        <img class="ratio-img swiper-lazy" src="#" data-src="img/portfolio/wide/{{ loop.index }}.jpg" alt="project image">
+                        <div class="swiper-lazy-preloader"></div>
+                      </div>
+                    </div>
+
+                    <div class="portfolio__content text-center">
+                      <span class="portfolio__category">BUILDINGS</span>
+                      <h3 class="portfolio__title">Pensacola Cityblock</h3>
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="pagination -slider mt-48 js-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

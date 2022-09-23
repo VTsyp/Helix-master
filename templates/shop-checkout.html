@@ -1,0 +1,143 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/13.jpg',
+    title: 'Shop Checkout',
+    subtitle: 'PRODUCTS'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row x-gap-60">
+        <div class="col-lg">
+          <div class="shopCheckout-form">
+            <form action="post" class="row x-gap-24 y-gap-40">
+              <div class="col-12">
+                <h4 class="shopCheckout-form__title">Billing Details</h4>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" name="firstName" placeholder="First name">
+              </div>
+
+              <div class="col-sm-6">
+                <input type="text" name="lastName" placeholder="Last name">
+              </div>
+
+              <div class="col-12">
+                <input type="text" name="company" placeholder="Company">
+              </div>
+
+              <div class="col-12">
+                <select class="selectize wide js-selectize">
+                  <option data-display="Select">Country</option>
+                  <option value="Greece">Greece</option>
+                  <option value="USA">USA</option>
+                  <option value="Germany">Germany</option>
+                  <option value="France">France</option>
+                </select>
+              </div>
+
+              <div class="col-12"> 
+                <input type="text" name="address" placeholder="Street Address">
+              </div>
+
+              <div class="col-sm-6">
+                <input type="text" name="postcode" placeholder="Postcode / ZIP">
+              </div>
+
+              <div class="col-sm-6"> 
+                <input type="text" name="city" placeholder="Town / City">
+              </div>
+
+              <div class="col-sm-6">
+                <input type="text" name="province" placeholder="Province">
+              </div>
+
+              <div class="col-sm-6">
+                <input type="text" name="phone" placeholder="Phone">
+              </div>
+
+              <div class="col-12"> 
+                <input type="email" name="email" placeholder="YourEmail">
+              </div>
+
+              <div class="col-12">
+                <h4 class="shopCheckout-form__title pb-16">Additional information</h4>
+              </div>
+              <div class="col-12">
+                <textarea name="notes" id="form_notes" rows="4" placeholder="Order notes (optional)"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-auto">
+          <div class="shopCart-sidebar">
+            <div class="shopCart-sidebar__totals">
+              <h5 class="title">
+                YOUR ORDER
+              </h5>
+
+              <div class="item">
+                <span class="fw-600 text-black">Product</span>
+                <span class="fw-600 text-black">Subtotal</span>
+              </div>
+
+              <div class="item">
+                <span class="text-grey">Hoodie x2</span>
+                <span class="text-grey">$59.00</span>
+              </div>
+
+              <div class="item -border-none">
+                <span class="text-grey">Seo Books x 1</span>
+                <span class="text-grey">$67.00</span>
+              </div>
+
+              <div class="item -border-none">
+                <span class="fw-600 text-black">Subtotal</span>
+                <span class="fw-600 text-black">$178.00</span>
+              </div>
+
+              <div class="item">
+                <span class="fw-600 text-black">Shipping</span>
+                <span class="fw-600 text-black">$178.00</span>
+              </div>
+
+              <div class="item">
+                <span class="fw-600 text-black">Total</span>
+                <span class="fw-600 text-black">$9,218.00</span>
+              </div>
+            </div>
+
+            <div class="shopCart-sidebar__button">
+              <button class="button -md -accent col-12 text-white">PROCEED TO CHECKOUT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

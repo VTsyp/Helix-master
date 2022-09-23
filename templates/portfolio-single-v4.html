@@ -1,0 +1,116 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/12.jpg',
+    title: 'Portfolio Single',
+    subtitle: 'OUR WORKS'
+  }) }}
+
+
+  <div class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="page-masthead__content">
+        <div class="row">
+          <div class="col-xl-8 col-lg-7">
+            <div class="relative pl-40 pr-80 lg:pr-0">
+              <div
+                class="sectionSlider overflow-hidden  js-sectionSlider"
+                data-gap="0"
+                data-slider-col="base-1 lg-1 md-1 sm-1"
+                data-pagination
+              >
+                <div class="swiper-wrapper">
+                  {% for item in range(0,5) %}
+                    <div class="swiper-slide">
+                      <a data-barba href="img/portfolio/cards/{{ loop.index }}.jpg" class="gallery__item js-gallery" data-gallery="gallery1">
+                        <div class="ratio ratio-77:60">
+                          <img class="ratio-img" src="img/portfolio/cards/{{ loop.index }}.jpg" alt="project image">
+                        </div>
+      
+                        <div class="gallery__button">
+                          <i class="icon" data-feather="plus"></i>
+                        </div>
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+        
+                <div class="pagination -slider -left js-pagination"></div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-xl-4 col-lg-5 col-md-10">
+            <h3 class="text-4xl leading-2xl md:mt-48">Modern Double Bedroom</h3>
+            <p class="text-sm leading-2xl mt-12">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects.</p>
+
+            <div class="row y-gap-32 pt-32">
+              {% for item in [
+                { title: 'TEAM', subtitle: 'Darlene Robertson' },
+                { title: 'CLIENT', subtitle: 'Hellix' },
+                { title: 'TERMS', subtitle: '6 month' },
+                { title: 'SERVICES', subtitle: 'Architecture, Interior' },
+                { title: 'STRATEGY', subtitle: 'Minimalistic' },
+                { title: 'DATE', subtitle: 'November 22, 2021' }
+              ] %}
+                <div class="col-lg-6 col-md-4 col-6">
+                  <div class="text-xs leading-2xl uppercase text-black fw-600">{{ item.title }}</div>
+                  <div class="text-sm leading-2xl">{{ item.subtitle }}</div>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="row y-gap-32 pt-32">
+              <div class="col-md-6">
+                <div class="text-xs leading-2xl uppercase text-black fw-600">SHARE</div>
+
+                <div class="socialsIcons mt-12">
+                  <a data-barba href="#" class="text-dark">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a data-barba href="#" class="text-dark">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a data-barba href="#" class="text-dark">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a data-barba href="#" class="text-dark">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% include "partials/related-projects-nav.njk" %}
+
+
+  {% include "partials/related-projects.njk" %}
+
+{% endblock %}

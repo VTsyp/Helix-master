@@ -1,0 +1,144 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/6.jpg',
+    title: 'Pricing & Plan',
+    subtitle: 'EXPLORE THE FEATURES'
+  }) }}
+
+
+  <!-- section start -->
+  <section class="layout-pt-md layout-pb-md">
+    <!-- container start -->
+    <div data-anim-wrap class="container">
+  
+      <!-- row start -->
+      <div class="row justify-content-center text-center">
+        <div class="col-xl-7 col-lg-9">
+          <div
+            data-anim-child="slide-up"
+            class="sectionHeading -lg"
+          >
+            <p class="sectionHeading__subtitle">
+              pricing
+            </p>
+            <h2 class="sectionHeading__title">
+              Our Pricing
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- row end -->
+
+  
+      <!-- row start -->
+      <div class="row x-gap-40 y-gap-40 layout-pt-md">
+        
+        {% for item in ['Free', '$599.95', '$999.95'] -%}
+
+          {% if loop.index === 2 %}
+
+            <div class="col-lg-4 col-md-6">
+              <div
+                data-anim-child="slide-up delay-{{ loop.index + 1 }}"
+                class="priceCard py-60 px-48 bg-dark"
+              >
+                <div class="priceCard__content">
+                  <h3 class="priceCard__title text-center text-beige-dark text-lg fw-500">
+                    Personal
+                  </h3>
+
+                  <h3 class="priceCard__price text-center text-5xl text-white fw-400 mt-8">
+                    {{ item }}
+                  </h3>
+
+                  <p class="text-white mt-24">
+                    Standard listing submission, active for 30 days.
+                  </p>
+    
+                  <ul class="priceCard__list text-white mt-48">
+                    <li><p class="">Web Optimized</p></li>
+                    <li><p class="">Free Server Domain</p></li>
+                    <li><p class="">Mobile Optimized</p></li>
+                    <li><p class="">Outstanding Support</p></li>
+                  </ul>
+      
+                  <div class="priceCard__button mt-48">
+                    <a data-barba href="#" class="button col-12 -md -accent text-white">
+                      CHOOSE PLAN
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          {% else %}
+
+            <div class="col-lg-4 col-md-6">
+              <div
+                data-anim-child="slide-up delay-{{ loop.index + 1 }}"
+                class="priceCard py-60 px-48 border-dark"
+              >
+                <div class="priceCard__content">
+                  <h3 class="priceCard__title text-center text-beige-dark text-lg fw-500">
+                    Personal
+                  </h3>
+
+                  <h3 class="priceCard__price text-center text-5xl text-black fw-400 mt-8">
+                    {{ item }}
+                  </h3>
+
+                  <p class="text-dark mt-24">
+                    Standard listing submission, active for 30 days.
+                  </p>
+    
+                  <ul class="priceCard__list mt-48">
+                    <li><p class="">Web Optimized</p></li>
+                    <li><p class="">Free Server Domain</p></li>
+                    <li><p class="">Mobile Optimized</p></li>
+                    <li><p class="">Outstanding Support</p></li>
+                  </ul>
+      
+                  <div class="priceCard__button mt-48">
+                    <a data-barba href="#" class="button col-12 -md -dark text-white">
+                      CHOOSE PLAN
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          {% endif %}
+  
+        {% endfor -%}
+  
+      </div>
+      <!-- row end -->
+  
+    </div>
+    <!-- container end -->
+  </section>
+  <!-- section end -->
+
+{% endblock %}

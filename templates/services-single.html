@@ -1,0 +1,108 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/6.jpg',
+    title: 'Services',
+    subtitle: 'EXPLORE THE FEATURES'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+
+      <div class="tabs -section js-tabs">
+        <div class="row y-gap-48">
+          <div class="col-xl-3 col-lg-4">
+            <div class="tabs__controls js-tabs-controls">
+              <button class="tabs__button col-12 is-active" data-tab-target=".-tab-item-1" type="button">
+                <i class="icon text-xl text-accent icon-pencil mr-16"></i>
+                Architecture & Interior
+              </button>
+
+              <button class="tabs__button col-12 mt-20" data-tab-target=".-tab-item-2" type="button">
+                <i class="icon text-xl text-accent icon-rocket mr-16"></i>
+                Project Planning
+              </button>
+
+              <button class="tabs__button col-12 mt-20" data-tab-target=".-tab-item-3" type="button">
+                <i class="icon text-xl text-accent icon-cube mr-16"></i>
+                Product Design
+              </button>
+
+              <button class="tabs__button col-12 mt-20" data-tab-target=".-tab-item-4" type="button">
+                <i class="icon text-xl text-accent icon-idea mr-16"></i>
+                Custom Solutions
+              </button>
+            </div>
+          </div>
+          
+          <div class="col-xl-9 col-lg-8">
+            <div class="tabs__content js-tabs-content">
+              <div class="tabs__pane -tab-item-1 is-active">
+                <div class="text-sm text-accent uppercase">WE OFFER</div>
+                <h4 class="text-2xl fw-600 mt-8">Custom Interior Design</h4>
+                <p class="mt-20">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="mt-16">True elements of surprise, they break up the compositional layout, creating a stylistic point of interest, and interrupting the continuous effect of the fabric covering, visually lightening the volume at the rear. A solution designed to optimise both look and form, created with the know-how about design and the savoir-faire associated with fine tailoring that have always distinguished the Minotti brand.</p>
+
+                <div class="row y-gap-32 py-48 md:py-32">
+                  <div class="col-md-6">
+                    <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/blog/1.png"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="ratio ratio-1:1 bg-image js-lazy" data-bg="img/blog/1.png"></div>
+                  </div>
+                </div>
+
+                <p class="">Encouraging the use of natural systems and processes in design allows for exposure to nature, and in turn, these design approaches improve health and wellbeing. There are a number of possible benefits, including reduced heart rate variability and pulse rates, decreased blood pressure, and increased activity in our nervous systems, to name a few.</p>
+              </div>
+
+              <div class="tabs__pane -tab-item-2">
+                <div class="text-sm text-accent uppercase">WE OFFER</div>
+                <h4 class="text-2xl fw-600 mt-8">Project Planning</h4>
+                <p class="mt-20">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="mt-16">True elements of surprise, they break up the compositional layout, creating a stylistic point of interest, and interrupting the continuous effect of the fabric covering, visually lightening the volume at the rear. A solution designed to optimise both look and form, created with the know-how about design and the savoir-faire associated with fine tailoring that have always distinguished the Minotti brand.</p>
+              </div>
+
+              <div class="tabs__pane -tab-item-3">
+                <div class="text-sm text-accent uppercase">WE OFFER</div>
+                <h4 class="text-2xl fw-600 mt-8">Product Design</h4>
+                <p class="mt-20">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="mt-16">True elements of surprise, they break up the compositional layout, creating a stylistic point of interest, and interrupting the continuous effect of the fabric covering, visually lightening the volume at the rear. A solution designed to optimise both look and form, created with the know-how about design and the savoir-faire associated with fine tailoring that have always distinguished the Minotti brand.</p>
+              </div>
+
+              <div class="tabs__pane -tab-item-4">
+                <div class="text-sm text-accent uppercase">WE OFFER</div>
+                <h4 class="text-2xl fw-600 mt-8">Custom Solutions</h4>
+                <p class="mt-20">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="mt-16">True elements of surprise, they break up the compositional layout, creating a stylistic point of interest, and interrupting the continuous effect of the fabric covering, visually lightening the volume at the rear. A solution designed to optimise both look and form, created with the know-how about design and the savoir-faire associated with fine tailoring that have always distinguished the Minotti brand.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,154 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/header/header-2.njk" import headerType2 %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerType2(
+    headerClass = "-no-pad",
+    container = true,
+    firstBlockMargin = "-margin-lg",
+    textColor = "text-black",
+    bgColor = "",
+    logoClass = "text-black",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  <section data-anim-wrap class="mainSlider -type-5 swiper-container js-mainSlider-type-5">
+    <div class="mainSlider__bg"></div>
+
+    <div class="swiper-wrapper">
+      {% for item in [
+        'interior design',
+        'Architecture',
+        '3D Modeling'
+      ] %}
+        <div class="swiper-slide">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-9 col-lg-11">
+                <div class="mainSlider__content js-content">
+                  <span class="mainSlider__subtitle">
+                    WHAT CAN WE OFFER
+                  </span>
+
+                  <span class="mainSlider__desc mt-16">
+                    Our Services
+                  </span>
+
+                  <div class="mainSlider__title_wrap mt-72 md:mt-48">
+                    <span class="mainSlider__bg_title">
+                      {{ item }}
+                    </span>
+                    <h1 class="mainSlider__title js-title">
+                      {{ item }}
+                    </h1>
+                  </div>
+                  
+                  <div class="mainSlider__button mt-72 md:mt-48 js-button">
+                    <a data-barba href="#" class="button -md -dark text-white">
+                      Discover more
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mainSlider__image" data-parallax="0.6" data-swiper-parallax="40%">
+            <img data-parallax-target class="swiper-lazy" src="img/main-sliders/home-5/{{ loop.index }}.jpg" alt="Slider image">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="navigation -slider -white js-navigation">
+      <div class="navigation__item js-nav-prev">
+        <i class="icon icon-left-arrow"></i>
+      </div>
+      <div class="navigation__item js-nav-next">
+        <i class="icon icon-right-arrow"></i>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-lg layout-pb-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-auto">
+          <div class="sectionHeading -left-line">
+            <span class="sectionHeading__subtitle">WORKS</span>
+            <h2 class="sectionHeading__title">Latest Projects</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row fancy-grid layout-pt-sm">
+        {% for item in [
+          { title: 'BURGS HOUSING', border: '-left' },
+          { title: 'LONDON FLAT', border: '-right' },
+          { title: 'HELSINKI RESIDENCE', border: '-left' },
+          { title: 'PARIS STUDIO', border: '-right' },
+          { title: 'NEW YORK HOTEL', border: '-left' },
+          { title: 'GREEN RESIDENCE', border: '-right' }
+        ] %}
+          <div data-anim-wrap class="grid__item">
+            <div class="grid__wrap background-border {{ item.border }}">
+              <div data-anim-child="img-right cover-black delay-1" class="grid__image">
+                <img src="img/portfolio/fancy/{{ loop.index }}.jpg" alt="Portfolio image">
+              </div>
+
+              <div class="grid__category">
+                Architecture
+              </div>
+
+              <div data-anim-child="slide-up delay-4" class="grid__content ml-64 md:ml-0 md:mt-20">
+                <h3 class="grid__title text-black">{{ item.title }}</h3>
+                <a data-barba href="#" class="grid__button button -simple text-black mt-16">VIEW MORE</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="col-12">
+          <div class="fancy-grid__button">
+            <a data-barba href="#" class="button -md -dark text-white">MORE PROJECT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="relative z-5 layout-pt-lg mb-minus-60 md:pt-0 md:mb-80 sm:mb-64">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="row no-gutters">
+            {% for item in range(0,5) %}
+              <div class="col-lg col-6">
+                <a data-barba href="#" class="instagram__item">
+                  <div class="instagram__image">
+                    <div class="ratio ratio-129:112 bg-image js-lazy" data-bg="img/instagram/{{ loop.index }}.jpg"></div>
+                  </div>
+
+                  <div class="instagram__content">
+                    <i class="icon fa fa-instagram" aria-hidden="true"></i>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

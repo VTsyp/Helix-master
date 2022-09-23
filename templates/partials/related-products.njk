@@ -1,0 +1,61 @@
+<section class="layout-pt-md layout-pb-md">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <div class="sectionHeading -top-line text-center">
+          <span class="sectionHeading__subtitle">SHOP</span>
+          <h2 class="sectionHeading__title">Related Products</h2>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row layout-pt-sm">
+      <div
+        class="sectionSlider overflow-hidden sm:px-16 js-sectionSlider"
+        data-gap="30"
+        data-slider-col="base-4 lg-3 md-2 sm-1"
+        data-pagination
+      >
+
+        <div class="swiper-wrapper">
+          {% for item in [1,2,3,4,1,2,3,4] %}
+            <div class="swiper-slide">
+              <div class="shopCard text-center">
+                <div class="shopCard__image ratio ratio-29:33">
+                  <img class="ratio-img" src="img/shop/products/{{ loop.index }}.jpg" alt="Product image">
+
+                  <a data-barba href="#" class="shopCard__button">
+                    <i class="icon" data-feather="shopping-bag"></i>
+                    Add to cart
+                  </a>
+                </div>
+
+                <div class="shopCard__content mt-20">
+                  <div class="shopCard__category text-accent">
+                    <a data-barba href="#" class="">House</a>,
+                    <a data-barba href="#" class="">Interior</a>
+                  </div>
+            
+                  <h4 class="shopCard__title text-base mt-8">Grey Velvet Chair</h4>
+                  <div class="shopCard__price text-sm text-dark mt-8">$350.00</div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="nav -slider lg:d-none">
+          <div class="nav__item -left js-prev">
+            <i class="icon icon-left-arrow"></i>
+          </div>
+
+          <div class="nav__item -right js-next">
+            <i class="icon icon-right-arrow"></i>
+          </div>
+        </div>
+
+        <div class="pagination -slider mt-48 js-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>

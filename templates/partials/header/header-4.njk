@@ -1,0 +1,167 @@
+{% from "partials/header/partials/desktop-nav.njk" import desktopNav %}
+
+{% macro headerPart(
+  headerClass="",
+  container=false,
+  firstBlockMargin="-margin-sm",
+  textColor="text-black",
+  bgColor="",
+  logoClass="",
+  iconsClass=""
+) %}
+  <!-- header start -->
+  <header class="header -home-4 js-header">
+    <div class="header__container">
+      <div class="header__top">
+        <div class="header__logo">
+          <img src="img/general/big-logo.svg" alt="Logo">
+        </div>
+      </div>
+
+      <div class="header__nav_wrap">
+        <div class="side-nav">
+          <div class="side-nav__item">
+            <a data-barba href="index.html">Home</a>
+            {# <ul class="side-nav__submenu">
+              {% for item in range(0,10) %}
+                <li class="side-nav__submenu_item">
+                  <a data-barba href="home-{{ loop.index }}.html">Home {{ loop.index }}</a>
+                </li>
+              {% endfor %}
+            </ul> #}
+          </div>
+          <div class="side-nav__item">
+            <a data-barba href="about-us.html">Pages</a>
+          </div>
+          <div class="side-nav__item">
+            <a data-barba href="services-single.html">Services</a>
+          </div>
+          <div class="side-nav__item">
+            <a data-barba href="portfolio-list-v1.html">Portfolio</a>
+          </div>
+          <div class="side-nav__item">
+            <a data-barba href="blog-list-v1.html">Blog</a>
+          </div>
+          <div class="side-nav__item">
+            <a data-barba href="#">Contacts</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__footer">
+        <span class="header__copyright text-sm">
+          © 2021 Hellix. All rights reserved.
+        </span>
+
+        <div class="header__socials">
+          <a data-barba href="#" class="text-black">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+          <a data-barba href="#" class="text-black">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a data-barba href="#" class="text-black">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a data-barba href="#" class="text-black">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__bar {{ bgColor }} d-none md:d-block js-header-bar">
+      <div class="row justify-content-between align-items-center">
+
+        <div class="col-auto js-header-item">
+          <div class="header__item {{ firstBlockMargin }}">
+            <div class="header__logo {{ logoClass }} js-header-logo">
+              <a data-barba href="index.html">
+                <i class="icon icon-logo"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-auto sm:pos-unset js-header-item">
+          <div class="header__icons {{ iconsClass }}">
+            {{ desktopNav(textStyle=textColor) }}
+            
+            <div class="header__cart">
+              <a data-barba href="#">
+                <i class="icon {{ textColor }} icon-cart"></i>
+              </a>
+
+              <div class="headerCart js-headerCart">
+                <div class="headerCart__content">
+                  {% for item in range(0,2) %}
+                    <div class="headerCart__item">
+                      <div class="headerCart__img">
+                        <img src="img/main-sidebar/cart/{{ loop.index }}.jpg" alt="image">
+                      </div>
+
+                      <div class="headerCart__wrap">
+                        <h5 class="headerCart__title">Decorative palm</h5>
+                        <span class="headerCart__info">1 × $244.00</span>
+                      </div>
+
+                      <div class="headerCart__cross">
+                        <i class="icon icon-cross"></i>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+
+                <div class="headerCart__footer">
+                  <div class="headerCart__total">
+                    <span>Subtotal:</span>
+                    <span>$895</span>
+                  </div>
+                  
+                  <div class="headerCart__buttons">
+                    <a data-barba href="#" class="button -md -grey text-white col-12">VIEW CART</a>
+                    <a data-barba href="#" class="button -md -accent text-white col-12">CHECKOUT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="header__search">
+              <button class="js-headerSearch-open">
+                <i class="icon {{ textColor }} icon-search"></i>
+              </button>
+            </div>
+
+            <div class="header__menu">
+                <button type="button" class="nav-button-open md:d-none js-sidebar-open">
+                  <i class="icon {{ textColor }} icon-menu"></i>
+                </button>
+
+                <button type="button" class="nav-button-open d-none md:d-block js-nav-open">
+                  <i class="icon {{ textColor }} icon-menu"></i>
+                </button>
+
+                <button type="button" class="nav-button-close d-none md:d-block pointer-events-none js-nav-close">
+                  <i class="icon {{ textColor }} icon-cross"></i>
+                </button>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="headerSearch js-headerSearch">
+        <div class="headerSearch__line"></div>
+        <form action="POST">
+          <i class="headerSearch__icon icon-search"></i>
+          <input type="search" placeholder="Type Your Search">
+        </form>
+        <button class="headerSearch__close js-headerSearch-close">
+          <i class="icon icon-cross {{ textColor }}"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+{% endmacro %}

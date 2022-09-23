@@ -1,0 +1,259 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/13.jpg',
+    title: 'Shop Single',
+    subtitle: 'PRODUCTS'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-md">
+    <div class="container">
+      <div class="row y-gap-60">
+        <div class="col-lg-7">
+          <div class="shopSingle-preview js-shop-slider">
+            <div class="shopSingle-preview__imageList js-slider-pagination">
+              <div data-cursor class="gallery__item">
+                <div class="ratio ratio-62:60">
+                  <img class="ratio-img" src="img/shop/products/1.jpg" alt="project image">
+                </div>
+              </div>
+
+              <div data-cursor class="gallery__item">
+                <div class="ratio ratio-62:60">
+                  <img class="ratio-img" src="img/shop/products/2.jpg" alt="project image">
+                </div>
+              </div>
+
+              <div data-cursor class="gallery__item">
+                <div class="ratio ratio-62:60">
+                  <img class="ratio-img" src="img/shop/products/3.jpg" alt="project image">
+                </div>
+              </div>
+
+              <div data-cursor class="gallery__item">
+                <div class="ratio ratio-62:60">
+                  <img class="ratio-img" src="img/shop/products/4.jpg" alt="project image">
+                </div>
+              </div>
+            </div>
+
+            <div class="shopSingle-preview__image js-slider-slider">
+              <div class="swiper-wrapper">
+                {% for item in range(0,4) %}
+                  <div class="swiper-slide">
+                    <a data-barba href="img/shop/products/{{ loop.index }}.jpg" class="gallery__item js-gallery" data-gallery="gallery1">
+                      <div class="ratio ratio-62:60">
+                        <img class="ratio-img" src="img/shop/products/{{ loop.index }}.jpg" alt="project image">
+                      </div>
+      
+                      <div class="gallery__button -bottom-right">
+                        <i class="icon" data-feather="plus"></i>
+                      </div>
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="shopSingle-info pl-40 lg:pl-0">
+            <div class="shopSingle-info__subtitle text-accent">House, Interior</div>
+
+            <h2 class="shopSingle-info__title text-black mt-4">Decorative palm</h2>
+
+            <div class="shopSingle-info__price text-lg fw-600 text-black mt-4">$350.00</div>
+
+            <div class="shopSingle-info__content mt-16">
+              <p>Fusce facilisis, tellus id tristique ullamcorper, nisl nulla tincidunt eros, non vestibulum lorem risus et nibh. Morbi egestas magna et rhoncus vehicula.</p>
+              <p>The chair has a slightly inclined back, rounded arms, a fixed seat cushion and slender ballerina legs in solid wood. Exclusive to Habitat, the chair is uphol stered in easy-care polyester velvet and comes in a choice of current and classic colours.</p>
+            </div>
+
+            <div class="shopSingle-info__action row y-gap-24 mt-60 md:mt-48 sm:mt-32">
+              <div class="col-auto">
+                <div class="input-counter js-input-counter">
+                  <input class='input-counter__counter' type="number" placeholder="value..." value='0'/>
+  
+                  <div class="input-counter__controls">
+                    <button class='input-counter__up js-up'>
+                      <i class='icon' data-feather="chevron-up"></i>
+                    </button>
+  
+                    <button class='input-counter__down js-down'>
+                      <i class='icon' data-feather="chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-auto">
+                <button class="button -md -dark text-white">ADD TO CART</button>
+              </div>
+            </div>
+
+            <div class="shopSingle-info__footer mt-60 md:mt-48 sm:mt-32">
+              <span>SKU: 036852</span>
+              <span>Category: Plants</span>
+              <span>Tags: Concrete, Minimal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-sm layout-pb-md">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="tabs -lines js-tabs">
+            <div class="tabs__controls d-flex justify-content-center js-tabs-controls">
+              <button class="tabs__button is-active" data-tab-target=".-tab-item-1" type="button">
+                DESCRIPTION
+              </button>
+              <button class="tabs__button" data-tab-target=".-tab-item-2" type="button">
+                REVIEWS (2)
+              </button>
+            </div>
+
+            <div class="tabs__content mt-48 js-tabs-content">
+              <div class="row justify-content-center">
+                <div class="col-xl-8">
+                  <div class="tabs__pane -tab-item-1 is-active">
+                    <div class="row x-gap-100 y-gap-48">
+                      <div class="col-12">
+                        <p class="text-sm">
+                          <span class="fw-600 text-black">Sed do eiusmod tempor incididunt ut labore</span>
+                          <br>
+                          <br>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        </p>
+                      </div>
+  
+                      <div class="col-md-6">
+                        <p class="text-sm fw-600 text-black">
+                          Why choose product?
+                        </p>
+
+                        <ul class="ul-list mt-24">
+                          <li class="text-sm">Creat by cotton fibric with soft and smooth</li>
+                          <li class="text-sm">Simple, Configurable (e.g. size, color, etc.), bundled</li>
+                          <li class="text-sm">Downloadable/Digital Products, Virtual Products</li>
+                        </ul>
+                      </div>
+
+                      <div class="col-md-6">
+                        <p class="text-sm fw-600 text-black">
+                          Why choose product?
+                        </p>
+
+                        <ul class="ul-list-ord mt-24">
+                          <li class="text-sm">Creat by cotton fibric with soft and smooth</li>
+                          <li class="text-sm">Simple, Configurable (e.g. size, color, etc.), bundled</li>
+                          <li class="text-sm">Downloadable/Digital Products, Virtual Products</li>
+                        </ul>
+                      </div>
+
+                      <div class="col-md-6">
+                        <p class="text-sm">
+                          <span class="fw-600 text-black">Lining</span>
+                          <br>
+                          100% Polyester, Main: 100% Polyester.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="tabs__pane -tab-item-2">
+                    <div class="blogPost -comments pt-12">
+                      <div class="blogPost__content">
+                        <h2 class="blogPost__title text-lg fw-600">
+                          02 Comments
+                        </h2>
+          
+                        <ul class="comments__list mt-24">
+                          <li class="comments__item">
+                            {{- mixins.blogComment(blog_comments[0]) -}}
+                          </li>
+          
+                          <li class="comments__item">
+                            {{- mixins.blogComment(blog_comments[1]) -}}
+                          </li>
+                        </ul>
+                      </div>
+          
+                      <div class="respondForm mt-64 md:mt-40">
+                        <h3 class="comments-reply-title">
+                          Leave a Reply
+                        </h3>
+          
+                        <form class="respondForm__form row" action="#">
+                          <div class="col-12">
+                            <textarea name="comment" id="comment" placeholder="Your Comment" rows="5"></textarea>
+                          </div>
+                          <div class="col-12 mt-20">
+                            <input type="text" name="userName" placeholder="Your Name">
+                          </div>
+                          <div class="col-12 mt-20">
+                            <input type="text" name="email" placeholder="Your Email">
+                          </div>
+                          <div class="col-12 mt-20">
+                            <input type="text" name="userName" placeholder="Website">
+                          </div>
+          
+                          <div class="form-checkbox col-12 mt-24">
+                            <label>
+                              <span class="checkbox-wrap">
+                                <input name="wp-comments-cookies-consent" type="checkbox">
+                                <span></span>
+                              </span>
+                              Save my name, email, and website in this browser for the next time I comment.
+                            </label>
+                          </div>
+          
+                          <div class="col-12 mt-24">
+                            <button type="submit" name="submit" id="submit" class="button -md -accent text-white">
+                              post comment
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {% include "partials/related-products.njk" %}
+
+{% endblock %}

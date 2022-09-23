@@ -1,0 +1,114 @@
+{% import "partials/_mixins.njk" as mixins %}
+{% from "partials/page-header.njk" import pageHeader %}
+{% from "partials/header/header.njk" import headerBlock %}
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+  {{ headerBlock(
+    headerClass = "",
+    container = false,
+    firstBlockMargin = "-margin-sm",
+    textColor = "text-white",
+    bgColor = "",
+    logoClass = "text-white",
+    iconsClass = ""
+  ) }}
+{% endblock %}
+
+{% block footer %}
+  {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {{ pageHeader({
+    img: 'img/backgrounds/6.jpg',
+    title: 'Faq',
+    subtitle: 'Explore the features'
+  }) }}
+
+
+  <section class="layout-pt-md layout-pb-sm">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <div class="sectionHeading -top-line text-center">
+            <span class="sectionHeading__subtitle">FAQ</span>
+            <h2 class="sectionHeading__title">General FAQ</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pt-60">
+        <div class="col-xl-8 col-lg-10">
+          <div class="accordion -simple js-accordion">
+            {% for item in [
+              { title: 'What is 3D rendering?' },
+              { title: 'Should I buy Revit 2021?' },
+              { title: 'Are there any discounts included?' },
+              { title: 'What is moodboard?' }
+            ] %}
+              <div class="accordion__item">
+                <div class="accordion__button text-black">
+                  <button class="text-lg md:text-base fw-600 text-black">{{ item.title }}</button>
+                  <div class="accordion__icon">
+                    <i class="icon" data-feather="plus"></i>
+                    <i class="icon" data-feather="minus"></i>
+                  </div>
+                </div>
+                <div class="accordion__content">
+                  <div class="accordion__content__inner">
+                    <p class="text-sm">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of.</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="layout-pt-sm layout-pb-md">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <div class="sectionHeading -top-line text-center">
+            <span class="sectionHeading__subtitle">FAQ</span>
+            <h2 class="sectionHeading__title">Membership and trials</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center pt-60">
+        <div class="col-xl-8 col-lg-10">
+          <div class="accordion -simple js-accordion">
+            {% for item in [
+              { title: 'What is 3D rendering?' },
+              { title: 'Should I buy Revit 2021?' },
+              { title: 'Are there any discounts included?' },
+              { title: 'What is moodboard?' }
+            ] %}
+              <div class="accordion__item">
+                <div class="accordion__button text-black">
+                  <button class="text-lg md:text-base fw-600 text-black">{{ item.title }}</button>
+                  <div class="accordion__icon">
+                    <i class="icon" data-feather="plus"></i>
+                    <i class="icon" data-feather="minus"></i>
+                  </div>
+                </div>
+                <div class="accordion__content">
+                  <div class="accordion__content__inner">
+                    <p class="text-sm">The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our customers by lightning-fast development of projects employing unique styles and architecture. Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of.</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
